@@ -1,0 +1,24 @@
+<section>
+  <div class="page-header">
+    <h1>Choferes</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="chofer in vm.chofers"
+       ui-sref="chofers.view({ choferId: chofer._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="chofer.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="chofer.user" ng-bind="chofer.user.displayName"></span>
+        <span ng-if="!chofer.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="chofer.name"></h4>
+      <h4 class="list-group-item-heading" ng-bind="chofer.last_name"></h4>
+
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.chofers.$resolved && !vm.chofers.length">
+    No Chofers yet, why don't you <a ui-sref="chofers.create">create one</a>?
+  </div>
+</section>

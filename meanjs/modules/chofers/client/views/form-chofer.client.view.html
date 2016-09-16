@@ -1,0 +1,70 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.chofer._id ? 'Editar chofer' : 'Nuevo Chofer'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.choferForm" class="form-horizontal" ng-submit="vm.save(vm.form.choferForm.$valid)" novalidate>
+      <fieldset>
+        
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Nombres</label>
+          <input name="name" type="text" ng-model="vm.chofer.name" id="name" class="form-control" placeholder="Nombre" required>
+          <div ng-messages="vm.form.choferForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere nombre del chofer.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="last_name">Apellidos</label>
+          <input name="last_name" type="text" ng-model="vm.chofer.last_name" id="last_name" class="form-control" placeholder="Apellidos" required>
+          <div ng-messages="vm.form.choferForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere apellidos del chofer.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="cell_phone">Celular</label>
+          <input name="cell_phone" type="text" ng-model="vm.chofer.cell_phone" id="cell_phone" class="form-control" placeholder="Celular" required>
+          <div ng-messages="vm.form.choferForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere celular.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="address">Direccion</label>
+          <input name="address" type="text" ng-model="vm.chofer.address" id="address" class="form-control" placeholder="Direccion" required>
+          <div ng-messages="vm.form.choferForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere direccion.</p>
+          </div>
+        </div>
+
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="age">edad</label>
+          <input name="age" type="text" ng-model="vm.chofer.age" id="age" class="form-control" placeholder="edad" required>
+          <div ng-messages="vm.form.choferForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere edad.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="birthdate">Fecha de nacimiento</label>
+          <input name="birthdate" type="text" ng-model="vm.chofer.birthdate" id="birthdate" class="form-control" placeholder="fecha de nacimiento" required>
+          <div ng-messages="vm.form.choferForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere fecha de nacimiento.</p>
+          </div>
+        </div>
+
+
+
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.chofer._id ? 'Actualizar' : 'Crear'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>
