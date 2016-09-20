@@ -1,5 +1,4 @@
 'use strict';
-
 /**
  * Module dependencies.
  */
@@ -8,15 +7,12 @@ var path = require('path'),
   Chofer = mongoose.model('Chofer'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   _ = require('lodash');
-
 /**
  * Create a Chofer
  */
 exports.create = function(req, res) {
   var chofer = new Chofer(req.body);
   chofer.user = req.user;
-  
-
   chofer.save(function(err) {
     if (err) {
       return res.status(400).send({
@@ -27,7 +23,6 @@ exports.create = function(req, res) {
     }
   });
 };
-
 /**
  * Show the current Chofer
  */
@@ -41,7 +36,6 @@ exports.read = function(req, res) {
 
   res.jsonp(chofer);
 };
-
 /**
  * Update a Chofer
  */
@@ -60,7 +54,6 @@ exports.update = function(req, res) {
     }
   });
 };
-
 /**
  * Delete an Chofer
  */
@@ -77,7 +70,6 @@ exports.delete = function(req, res) {
     }
   });
 };
-
 /**
  * List of Chofers
  */
@@ -92,7 +84,6 @@ exports.list = function(req, res) {
     }
   });
 };
-
 /**
  * Chofer middleware
  */
@@ -103,7 +94,6 @@ exports.choferByID = function(req, res, next, id) {
       message: 'Chofer is invalid'
     });
   }
-
   Chofer.findById(id).populate('user', 'displayName').exec(function (err, chofer) {
     if (err) {
       return next(err);

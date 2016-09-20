@@ -1,8 +1,9 @@
 <div>
-  <h3 class="col-xs-12 text-center">O inscribirse usando su correo electrónico</h3>
+  <h3 class="col-xs-12 text-center">Registro de usuario</h3>
   <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
     <form name="vm.userForm" ng-submit="vm.signup(vm.userForm.$valid)" class="signin" novalidate autocomplete="off">
       <fieldset>
+      <div>
         <div class="form-group" show-errors>
           <label for="firstName">Nombres</label>
           <input type="text" id="firstName" name="firstName" class="form-control" ng-model="vm.credentials.firstName" placeholder="Nombres" required>
@@ -48,8 +49,10 @@
         </div>
         <div class="text-center form-group">
           <button type="submit" class="btn btn-primary">Regístrate</button>
-          &nbsp; or&nbsp;
+          &nbsp; o &nbsp;
           <a ui-sref="authentication.signin" class="show-signup">Registrarse</a>
+        </div>
+
         </div>
         <div ng-show="vm.error" class="text-center text-danger">
           <strong ng-bind="vm.error"></strong>

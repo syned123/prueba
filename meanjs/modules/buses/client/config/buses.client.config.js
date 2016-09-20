@@ -13,18 +13,18 @@
       title: 'Buses',
       state: 'buses',
       type: 'dropdown',
-      roles: ['*']
+      roles: ['user']
     });
 
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'buses', {
-      title: 'List Buses',
+      title: 'Lista de  Buses',
       state: 'buses.list'
     });
 
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'buses', {
-      title: 'Create Bus',
+      title: 'Crear Bus',
       state: 'buses.create',
       roles: ['user']
     });

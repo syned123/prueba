@@ -1,36 +1,69 @@
 <section>
   <div class="page-header">
-    <h1>{{vm.bus._id ? 'Edit Bus' : 'New Bus'}}</h1>
+    <h1>{{vm.bus._id ? 'Edit Bus' : 'Nuevo Bus'}}</h1>
   </div>
   <div class="col-md-12">
     <form name="vm.form.busForm" class="form-horizontal" ng-submit="vm.save(vm.form.busForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
-          <label class="control-label" for="name">Name</label>
-          <input name="name" type="text" ng-model="vm.bus.name" id="name" class="form-control" placeholder="Name" required>
-          <div ng-messages="vm.form.busForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Bus name is required.</p>
+          <label class="control-label" for="placa">Placa</label>
+          <input name="placa" type="text" ng-model="vm.bus.placa" id="placa" class="form-control" placeholder="Placa" required>
+          <div ng-messages="vm.form.busForm.placa.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere placa de bus.</p>
           </div>
         </div>
-
-
 
         <div class="form-group" show-errors>
           <label class="control-label" for="color">color</label>
-          <input name="color" type="text" ng-model="vm.bus.color" id="color" class="form-control" placeholder="color" required>
-          <div ng-messages="vm.form.busForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Bus name is required.</p>
+          <input name="color" type="text" ng-model="vm.bus.color" id="color" class="form-control" placeholder="Color" required>
+          <div ng-messages="vm.form.busForm.color.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere color de bus</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="modelo">Modelo</label>
+          <input name="modelo" type="text" ng-model="vm.bus.modelo" id="modelo" class="form-control" placeholder="Modelo" required>
+          <div ng-messages="vm.form.busForm.modelo.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere modelo de bus</p>
           </div>
         </div>
 
 
+        <div class="form-group" show-errors>
+          <label class="control-label" for="asientos">Cantidad de asientos</label>
+          <input name="asientos" type="text" ng-model="vm.bus.asientos" id="asientos" class="form-control" placeholder="Cantidad de asientos" required>
+          <div ng-messages="vm.form.busForm.asientos.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere cantidad de asientos de bus</p>
+          </div>
+        </div>
+
+
+       
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="pisos">Cantidad de pisos</label>
+          <select name="pisos"  ng-model="vm.bus.pisos" id="pisos" class="form-control" placeholder="Cantidad de pisos" required>
+            <option>1</option>
+            <option>2</option>
+          </select>
+          <div ng-messages="vm.form.busForm.pisos.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere cantidad de pisos de bus</p>
+          </div>
+        </div>
+
+          
+
 
         <div class="form-group">
-          <button type="submit" class="btn btn-default">{{vm.bus._id ? 'Update' : 'Create'}}</button>
+          <button type="submit" class="btn btn-success">{{vm.bus._id ? 'Actualizar' : 'Crear'}}</button>
         </div>
+
         <div ng-show="vm.error" class="text-danger">
           <strong ng-bind="vm.error"></strong>
         </div>
+
+
       </fieldset>
     </form>
   </div>

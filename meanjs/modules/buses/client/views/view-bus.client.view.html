@@ -1,7 +1,8 @@
 <section>
   <div class="page-header">
-    <h1 ng-bind="vm.bus.name"></h1>
-    color: {{bus.color}}</br>
+    <h1 ng-bind="vm.bus.placa"></h1>
+    <h1 ng-bind="vm.bus.color"></h1>
+    <h1 ng-bind="vm.bus.pisos"></h1>
   </div>
   <div class="pull-right"
        ng-show="vm.bus.isCurrentUserOwner">
@@ -15,12 +16,12 @@
   </div>
   <small>
     <em class="text-muted">
-      Posted on
+      Publicado en
       <span ng-bind="vm.bus.created | date:'mediumDate'"></span>
-      by
+      por
       <span ng-if="vm.bus.user"
             ng-bind="vm.bus.user.displayName"></span>
-      <span ng-if="!vm.bus.user">Deleted User</span>
+      <span ng-if="!vm.bus.user">Bus eliminado</span>
     </em>
   </small>
   <p class="lead" ng-bind="vm.bus.content"></p>

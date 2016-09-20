@@ -70,9 +70,7 @@
       choferId: $stateParams.choferId
     }).$promise;
   }
-
   newChofer.$inject = ['ChofersService'];
-
   function newChofer(ChofersService) {
     return new ChofersService();
   }

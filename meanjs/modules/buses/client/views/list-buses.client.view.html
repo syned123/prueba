@@ -1,23 +1,68 @@
 <section>
   <div class="page-header">
     <h1>Buses</h1>
+        
   </div>
+
+    <div>    
+      <table class="table">
+        <thead>
+         <tr>
+          <th>Placa</th>
+          <th>Color</th>
+          <th>Modelo</th>
+          <th>Cantidad de asientos</th>
+          <th>Cantidad de pisos</th>
+         </tr>
+        </thead>
+          <tbody>
+           <tr ng-repeat = "bus in vm.buses">
+            <td>{{bus.placa}}</td>
+            <td>{{bus.color}}</td>
+            <td>{{bus.modelo}}</td>
+            <td>{{bus.asientos}}</td>
+            <td>{{bus.pisos}}</td>
+            <td>
+             <div class="table-actions">
+               <a clas="btn btn-default" title="Ver" href="/#!/buses/{{bus._id}}">
+                <span class="glyphicon glyphicon-eye-open"></span>
+               </a>
+               <a clas="btn btn-default" title="Editar" href="/#!/buses/{{bus._id}}/edit">
+                <span class="glyphicon glyphicon-edit"></span>
+               </a>
+               
+             </div>
+            </td>
+            </tr>         
+          </tbody>
+      </table>
+    </div>
+
+        
+
+
+
+<!--
   <div class="list-group">
     <a ng-repeat="bus in vm.buses"
        ui-sref="buses.view({ busId: bus._id })"
        class="list-group-item">
       <small class="list-group-item-text">
-        Posted on
+        Publica en
         <span ng-bind="bus.created | date:'mediumDate'"></span>
-        by
+        Por
         <span ng-if="bus.user" ng-bind="bus.user.displayName"></span>
-        <span ng-if="!bus.user">Deleted User</span>
+        <span ng-if="!bus.user">Bus Eliminado</span>
       </small>
-      <h4 class="list-group-item-heading" ng-bind="bus.name"></h4>
-      color: {{bus.color}}</br>
-    </a>
+
+      
+      <h4 class="list-group-item-heading" ng-bind="bus.placa"></h4>
+      <h4 class="list-group-item-heading" ng-bind="bus.color"></h4>
+      <h4 class="list-group-item-heading" ng-bind="bus.pisos"></h4>
+      </a>
   </div>
+  -->
   <div class="alert alert-warning text-center" ng-if="vm.buses.$resolved && !vm.buses.length">
-    No Buses yet, why don't you <a ui-sref="buses.create">create one</a>?
+    No hay  buses , sin embargo, ¿por qué no <a ui-sref="buses.create">create uno</a>?
   </div>
 </section>

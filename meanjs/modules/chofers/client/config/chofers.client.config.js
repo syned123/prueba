@@ -1,6 +1,5 @@
 (function () {
   'use strict';
-
   angular
     .module('chofers')
     .run(menuConfig);
@@ -13,7 +12,7 @@
       title: 'Choferes',
       state: 'chofers',
       type: 'dropdown',
-      roles: ['*']
+      roles: ['user']
     });
 
     // Add the dropdown list item

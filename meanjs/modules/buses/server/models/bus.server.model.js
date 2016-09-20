@@ -10,13 +10,31 @@ var mongoose = require('mongoose'),
  * Bus Schema
  */
 var BusSchema = new Schema({
-  name: {
+  placa: {
     type: String,
     default: '',
     required: 'Please fill Bus name',
     trim: true
   },
   color: {
+    type: String,
+    default: '',
+    required: 'Please fill Bus color',
+    trim: true
+  },
+  modelo: {
+    type: String,
+    default: '',
+    required: 'Please fill Bus color',
+    trim: true
+  },
+  asientos: {
+    type: String,
+    default: '',
+    required: 'Please fill Bus color',
+    trim: true
+  },
+  pisos: {
     type: String,
     default: '',
     required: 'Please fill Bus color',

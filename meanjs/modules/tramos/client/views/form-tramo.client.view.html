@@ -1,0 +1,24 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.tramo._id ? 'Edit Tramo' : 'New Tramo'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.tramoForm" class="form-horizontal" ng-submit="vm.save(vm.form.tramoForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Name</label>
+          <input name="name" type="text" ng-model="vm.tramo.name" id="name" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.tramoForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Tramo name is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.tramo._id ? 'Update' : 'Create'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>
