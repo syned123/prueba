@@ -18,13 +18,13 @@
 
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'viajes', {
-      title: 'List Viajes',
+      title: 'Lista Viajes',
       state: 'viajes.list'
     });
 
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'viajes', {
-      title: 'Create Viaje',
+      title: 'Crear Viaje',
       state: 'viajes.create',
       roles: ['user']
     });

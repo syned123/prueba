@@ -1,19 +1,33 @@
 <section>
   <div class="page-header">
-    <h1>{{vm.cliente._id ? 'Edit Cliente' : 'New Cliente'}}</h1>
+    <h1>{{vm.cliente._id ? 'Editar Cliente' : 'Nuevo Cliente'}}</h1>
   </div>
   <div class="col-md-12">
     <form name="vm.form.clienteForm" class="form-horizontal" ng-submit="vm.save(vm.form.clienteForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
-          <label class="control-label" for="name">Name</label>
-          <input name="name" type="text" ng-model="vm.cliente.name" id="name" class="form-control" placeholder="Name" required>
+          <label class="control-label" for="nombre_cliente">Nombre del cliente</label>
+          <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Nombre cliente" required>
           <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Cliente name is required.</p>
+            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="apellidos_cliente">Apellidos del cliente</label>
+          <input name="apellidos_cliente" type="text" ng-model="vm.cliente.apellidos_cliente" id="apellidos_cliente" class="form-control" placeholder="Apellidos cliente" required>
+          <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="ci_nit">Ci o nit del cliente</label>
+          <input name="ci_nit" type="text" ng-model="vm.cliente.ci_nit" id="ci_nit" class="form-control" placeholder="Ci o nir del cliente" required>
+          <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere ci o nit del cliente</p>
           </div>
         </div>
         <div class="form-group">
-          <button type="submit" class="btn btn-default">{{vm.cliente._id ? 'Update' : 'Create'}}</button>
+          <button type="submit" class="btn btn-default">{{vm.cliente._id ? 'Actualizar' : 'Crear'}}</button>
         </div>
         <div ng-show="vm.error" class="text-danger">
           <strong ng-bind="vm.error"></strong>

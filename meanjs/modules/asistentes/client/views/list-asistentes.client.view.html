@@ -2,21 +2,45 @@
   <div class="page-header">
     <h1>Asistentes</h1>
   </div>
-  <div class="list-group">
-    <a ng-repeat="asistente in vm.asistentes"
-       ui-sref="asistentes.view({ asistenteId: asistente._id })"
-       class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span ng-bind="asistente.created | date:'mediumDate'"></span>
-        by
-        <span ng-if="asistente.user" ng-bind="asistente.user.displayName"></span>
-        <span ng-if="!asistente.user">Deleted User</span>
-      </small>
-      <h4 class="list-group-item-heading" ng-bind="asistente.name"></h4>
-    </a>
-  </div>
+
+  <div>    
+      <table class="table table-bordered">
+        <thead>
+         <tr>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>Celular</th>
+          <th>Direccion</th>
+          <th>Edad</th>
+          <th>Fecha de nacimiento</th>
+         </tr>
+        </thead>
+          <tbody>
+           <tr ng-repeat = "asistente in vm.asistentes">
+            <td>{{asistente.nombre_asistente}}</td>
+            <td>{{asistente.apellido_asistente}}</td>
+            <td>{{asistente.celular}}</td>
+            <td>{{asistente.direccion}}</td>
+            <td>{{asistente.edad}}</td>
+            <td>{{asistente.fecha_nacimiento}}</td>
+            <td>
+             <div class="table-actions">
+               <a clas="btn btn-default" title="Ver" href="/#!/asistentes/{{asistente._id}}">
+                <span class="glyphicon glyphicon-eye-open"></span>
+               </a>
+               <a clas="btn btn-default" title="Editar" href="/#!/asistentes/{{asistente._id}}/edit">
+                <span class="glyphicon glyphicon-edit"></span>
+               </a>
+               
+             </div>
+            </td>
+            </tr>         
+          </tbody>
+      </table>
+    </div>
+
+  
   <div class="alert alert-warning text-center" ng-if="vm.asistentes.$resolved && !vm.asistentes.length">
-    No Asistentes yet, why don't you <a ui-sref="asistentes.create">create one</a>?
+    No existen asistentes , ¿por qué no <a ui-sref="asistentes.create">crea uno</a>?
   </div>
 </section>

@@ -10,12 +10,25 @@ var mongoose = require('mongoose'),
  * Cliente Schema
  */
 var ClienteSchema = new Schema({
-  name: {
+  nombre_cliente: {
     type: String,
     default: '',
-    required: 'Please fill Cliente name',
+    required: 'Por favor introduzca nombre del cliente',
     trim: true
   },
+  apellidos_cliente: {
+    type: String,
+    default: '',
+    required: 'Por favor introduzca apellidos del cliente',
+    trim: true
+  },
+  ci_nit: {
+    type: String,
+    default: '',
+    required: 'Por favor introduzca ci o nit del cliente',
+    trim: true
+  },
+
   created: {
     type: Date,
     default: Date.now

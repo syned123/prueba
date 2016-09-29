@@ -1,7 +1,14 @@
 <section>
   <div class="page-header">
-    <h1 ng-bind="vm.chofer.name"></h1>
-    <h1 ng-bind="vm.chofer.last_name"></h1>
+
+    <h2><left>Nombre: {{vm.chofer.name}}</left></h2>
+    <h2><left>Apellidos: {{vm.chofer.last_name}}</left></h2>
+    <h2><left>Celular: {{vm.chofer.cell_phone}}</left></h2>
+    <h2><left>Direccion: {{vm.chofer.address}}</left></h2>
+    <h2><left>Edad: {{vm.chofer.age}}</left></h2>
+    <h2><left>Fecha de nacimiento: {{vm.chofer.birthdate}}</left></h2>
+
+
 
   </div>
   <div class="pull-right"
@@ -16,12 +23,12 @@
   </div>
   <small>
     <em class="text-muted">
-      Posted on
+      Publicado en
       <span ng-bind="vm.chofer.created | date:'mediumDate'"></span>
-      by
+      por
       <span ng-if="vm.chofer.user"
             ng-bind="vm.chofer.user.displayName"></span>
-      <span ng-if="!vm.chofer.user">Deleted User</span>
+      <span ng-if="!vm.chofer.user">Eliminar choferr</span>
     </em>
   </small>
   <p class="lead" ng-bind="vm.chofer.content"></p>

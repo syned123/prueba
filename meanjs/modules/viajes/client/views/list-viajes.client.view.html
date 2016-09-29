@@ -2,6 +2,43 @@
   <div class="page-header">
     <h1>Viajes</h1>
   </div>
+
+
+  <div>    
+      <table class="table table-bordered">
+        <thead>
+         <tr>
+          <th>Horario</th>
+          <th>Destino</th>
+          <th>Turno de salida</th>
+          <th>Chofer</th>
+          <th>Asistente</th>
+          <th>Bus</th>
+          </tr>
+        </thead>
+          <tbody>
+           <tr ng-repeat = "viaje in vm.viajes">
+            <td>{{viaje.horario}}</td>
+            <td>{{viaje.destino}}</td>
+            <td>{{viaje.turno_salida}}</td>
+            <td>{{viaje.chofer}}</td>
+            <td>{{viaje.asistente}}</td>
+            <td>{{viaje.bus}}</td>
+            <td>
+             <div class="table-actions">
+               <a clas="btn btn-default" title="Ver" href="/#!/viajes/{{viaje._id}}">
+                <span class="glyphicon glyphicon-eye-open"></span>
+               </a>
+               <a clas="btn btn-default" title="Editar" href="/#!/viajes/{{viaje._id}}/edit">
+                <span class="glyphicon glyphicon-edit"></span>
+               </a>
+               
+             </div>
+            </td>
+            </tr>         
+          </tbody>
+      </table>
+    </div>
   <div class="list-group">
     <a ng-repeat="viaje in vm.viajes"
        ui-sref="viajes.view({ viajeId: viaje._id })"
@@ -17,6 +54,6 @@
     </a>
   </div>
   <div class="alert alert-warning text-center" ng-if="vm.viajes.$resolved && !vm.viajes.length">
-    No Viajes yet, why don't you <a ui-sref="viajes.create">create one</a>?
+    No existen viajes por que no <a ui-sref="viajes.create">Crea uno</a>?
   </div>
 </section>

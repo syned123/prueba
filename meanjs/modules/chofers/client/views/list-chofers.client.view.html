@@ -2,23 +2,46 @@
   <div class="page-header">
     <h1>Choferes</h1>
   </div>
-  <div class="list-group">
-    <a ng-repeat="chofer in vm.chofers"
-       ui-sref="chofers.view({ choferId: chofer._id })"
-       class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span ng-bind="chofer.created | date:'mediumDate'"></span>
-        by
-        <span ng-if="chofer.user" ng-bind="chofer.user.displayName"></span>
-        <span ng-if="!chofer.user">Deleted User</span>
-      </small>
-      <h4 class="list-group-item-heading" ng-bind="chofer.name"></h4>
-      <h4 class="list-group-item-heading" ng-bind="chofer.last_name"></h4>
 
-    </a>
-  </div>
+
+  <div>    
+      <table class="table table-bordered">
+        <thead>
+         <tr>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>Celular</th>
+          <th>Direccion</th>
+          <th>Edad</th>
+          <th>Fecha de nacimiento</th>
+         </tr>
+        </thead>
+          <tbody>
+           <tr ng-repeat = "chofer in vm.chofers">
+            <td>{{chofer.name}}</td>
+            <td>{{chofer.last_name}}</td>
+            <td>{{chofer.cell_phone}}</td>
+            <td>{{chofer.address}}</td>
+            <td>{{chofer.age}}</td>
+            <td>{{chofer.birthdate}}</td>
+            <td>
+             <div class="table-actions">
+               <a clas="btn btn-default" title="Ver" href="/#!/chofers/{{chofer._id}}">
+                <span class="glyphicon glyphicon-eye-open"></span>
+               </a>
+               <a clas="btn btn-default" title="Editar" href="/#!/chofers/{{chofer._id}}/edit">
+                <span class="glyphicon glyphicon-edit"></span>
+               </a>
+               
+             </div>
+            </td>
+            </tr>         
+          </tbody>
+      </table>
+    </div>
+
+  
   <div class="alert alert-warning text-center" ng-if="vm.chofers.$resolved && !vm.chofers.length">
-    No Chofers yet, why don't you <a ui-sref="chofers.create">create one</a>?
+    No hay choferes sin embargo, ¿por qué no <a ui-sref="chofers.create">crea uno</a>?
   </div>
 </section>

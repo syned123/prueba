@@ -1,6 +1,6 @@
 <section>
   <div class="page-header">
-    <h1>{{vm.chofer._id ? 'Editar chofer' : 'Nuevo Chofer'}}</h1>
+        <h1>{{vm.chofer._id ? 'Editar chofer' : 'Nuevo Chofer'}}</h1>
   </div>
   <div class="col-md-12">
     <form name="vm.form.choferForm" class="form-horizontal" ng-submit="vm.save(vm.form.choferForm.$valid)" novalidate>
@@ -54,6 +54,7 @@
             <p class="help-block error-text" ng-message="required">Se requiere fecha de nacimiento.</p>
           </div>
         </div>
+
 
 
 

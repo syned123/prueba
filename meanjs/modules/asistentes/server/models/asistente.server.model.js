@@ -10,7 +10,37 @@ var mongoose = require('mongoose'),
  * Asistente Schema
  */
 var AsistenteSchema = new Schema({
-  name: {
+  nombre_asistente: {
+    type: String,
+    default: '',
+    required: 'Por favor introduzca nombre',
+    trim: true
+  },
+  apellido_asistente: {
+    type: String,
+    default: '',
+    required: 'Please fill Asistente name',
+    trim: true
+  },
+  celular: {
+    type: String,
+    default: '',
+    required: 'Please fill Asistente name',
+    trim: true
+  },
+  direccion: {
+    type: String,
+    default: '',
+    required: 'Please fill Asistente name',
+    trim: true
+  },
+  edad: {
+    type: String,
+    default: '',
+    required: 'Please fill Asistente name',
+    trim: true
+  },
+  fecha_nacimiento: {
     type: String,
     default: '',
     required: 'Please fill Asistente name',

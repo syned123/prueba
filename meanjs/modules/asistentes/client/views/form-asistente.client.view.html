@@ -1,19 +1,57 @@
 <section>
   <div class="page-header">
-    <h1>{{vm.asistente._id ? 'Edit Asistente' : 'New Asistente'}}</h1>
+    <h1>{{vm.asistente._id ? 'Editar Asistente' : 'Nuevo Asistente'}}</h1>
   </div>
   <div class="col-md-12">
     <form name="vm.form.asistenteForm" class="form-horizontal" ng-submit="vm.save(vm.form.asistenteForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
-          <label class="control-label" for="name">Name</label>
-          <input name="name" type="text" ng-model="vm.asistente.name" id="name" class="form-control" placeholder="Name" required>
-          <div ng-messages="vm.form.asistenteForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Asistente name is required.</p>
+          <label class="control-label" for="nombre_asistente">Nombres de Asistente</label>
+          <input name="nombre_asistente" type="text" ng-model="vm.asistente.nombre_asistente" id="nombre_asistente" class="form-control" placeholder="nombre de asistente" required>
+          <div ng-messages="vm.form.asistenteForm.nombre_asistente.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere nombre de asistene.</p>
           </div>
         </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="apellido_asistente">Apellidos de asistente</label>
+          <input name="apellido_asistente" type="text" ng-model="vm.asistente.apellido_asistente" id="apellido_asistente" class="form-control" placeholder="apellido de asistente" required>
+          <div ng-messages="vm.form.asistenteForm.apellido_asistente.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere apellidos de asistente.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="celular">celular</label>
+          <input name="celular" type="text" ng-model="vm.asistente.celular" id="celular" class="form-control" placeholder="Celular" required>
+          <div ng-messages="vm.form.asistenteForm.celular.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">se requiere celular.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="direccion">direccion</label>
+          <input name="direccion" type="text" ng-model="vm.asistente.direccion" id="direccion" class="form-control" placeholder="direccion" required>
+          <div ng-messages="vm.form.asistenteForm.direccion.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">se requiere direccion.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="edad">Edad</label>
+          <input name="edad" type="text" ng-model="vm.asistente.edad" id="edad" class="form-control" placeholder="edad" required>
+          <div ng-messages="vm.form.asistenteForm.edad.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere edad.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="fecha_nacimiento">Fecha de nacimiento</label>
+          <input name="fecha_nacimiento" type="text" ng-model="vm.asistente.fecha_nacimiento" id="fecha_nacimiento" class="form-control" placeholder="fecha de nacimiento" required>
+          <div ng-messages="vm.form.asistenteForm.fecha_nacimiento.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere fecha de nacimiento.</p>
+          </div>
+        </div>
+
+
         <div class="form-group">
-          <button type="submit" class="btn btn-default">{{vm.asistente._id ? 'Update' : 'Create'}}</button>
+          <button type="submit" class="btn btn-default">{{vm.asistente._id ? 'Actualizar' : 'Crear'}}</button>
         </div>
         <div ng-show="vm.error" class="text-danger">
           <strong ng-bind="vm.error"></strong>

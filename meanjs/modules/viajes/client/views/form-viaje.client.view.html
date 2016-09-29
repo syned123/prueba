@@ -1,19 +1,55 @@
 <section>
   <div class="page-header">
-    <h1>{{vm.viaje._id ? 'Edit Viaje' : 'New Viaje'}}</h1>
+    <h1>{{vm.viaje._id ? 'Editar Viaje' : 'Nuevo viaje'}}</h1>
   </div>
   <div class="col-md-12">
     <form name="vm.form.viajeForm" class="form-horizontal" ng-submit="vm.save(vm.form.viajeForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
-          <label class="control-label" for="name">Name</label>
-          <input name="name" type="text" ng-model="vm.viaje.name" id="name" class="form-control" placeholder="Name" required>
-          <div ng-messages="vm.form.viajeForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Viaje name is required.</p>
+          <label class="control-label" for="horario">Horario</label>
+          <input name="horario" type="text" ng-model="vm.viaje.horario" id="horario" class="form-control" placeholder="Horario" required>
+          <div ng-messages="vm.form.viajeForm.horario.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere horario</p>
           </div>
         </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="destino">Destino</label>
+          <input name="destino" type="text" ng-model="vm.viaje.destino" id="destino" class="form-control" placeholder="Destino" required>
+          <div ng-messages="vm.form.viajeForm.destino.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere destino</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="turno_salida">turno de salida</label>
+          <input name="turno_salida" type="text" ng-model="vm.viaje.turno_salida" id="turno_salida" class="form-control" placeholder="Turno de salida" required>
+          <div ng-messages="vm.form.viajeForm.turno_salida.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere turno de salida</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Chofer</label>
+          <input name="name" type="text" ng-model="vm.chofer.name" id="name" class="form-control" placeholder="Chofer" required>
+          <div ng-messages="vm.form.viajeForm.chofer.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere chofer</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="apellido_asistente">Asistente</label>
+          <input name="apellido_asistente" type="text" ng-model="vm.asistente.nombre_asistente" id="apellido_asistente" class="form-control" placeholder="Asistente" required>
+          <div ng-messages="vm.form.viajeForm.apellido_asistente.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere asistente</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="bus">Bus</label>
+          <input name="bus" type="text" ng-model="vm.viaje.bus" id="bus" class="form-control" placeholder="bus" required>
+          <div ng-messages="vm.form.viajeForm.bus.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere bus</p>
+          </div>
+        </div>
+                
         <div class="form-group">
-          <button type="submit" class="btn btn-default">{{vm.viaje._id ? 'Update' : 'Create'}}</button>
+          <button type="submit" class="btn btn-default">{{vm.viaje._id ? 'Actualizar' : 'Crear'}}</button>
         </div>
         <div ng-show="vm.error" class="text-danger">
           <strong ng-bind="vm.error"></strong>

@@ -18,13 +18,13 @@
 
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'asistentes', {
-      title: 'List Asistentes',
+      title: 'Lista de Asistentes',
       state: 'asistentes.list'
     });
 
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'asistentes', {
-      title: 'Create Asistente',
+      title: 'Crear Asistente',
       state: 'asistentes.create',
       roles: ['user']
     });

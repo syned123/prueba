@@ -17,7 +17,7 @@
 
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'chofers', {
-      title: 'Lista Choferes',
+      title: 'Lista de Choferes',
       state: 'chofers.list'
     });
 
