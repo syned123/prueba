@@ -19,34 +19,45 @@
             <p class="help-block error-text" ng-message="required">Se requiere destino</p>
           </div>
         </div>
-        <div class="form-group" show-errors>
-          <label class="control-label" for="turno_salida">turno de salida</label>
-          <input name="turno_salida" type="text" ng-model="vm.viaje.turno_salida" id="turno_salida" class="form-control" placeholder="Turno de salida" required>
+
+         <div class="form-group" show-errors>
+          <label class="control-label" for="turno_salida">Turno de salida</label>
+          <select name="turno_salida"  ng-model="vm.viaje.turno_salida" id="turno_salida" class="form-control" placeholder="turno de salida" required>
+            <option>Dia</option>
+            <option>Tarde</option>
+            <option>Noche</option>
+          </select>
           <div ng-messages="vm.form.viajeForm.turno_salida.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Se requiere turno de salida</p>
           </div>
-        </div>
+        </div>  
+
+        
         <div class="form-group" show-errors>
-          <label class="control-label" for="name">Chofer</label>
-          <input name="name" type="text" ng-model="vm.chofer.name" id="name" class="form-control" placeholder="Chofer" required>
-          <div ng-messages="vm.form.viajeForm.chofer.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Se requiere chofer</p>
+          <label class="control-label" for="bus">Placa</label>
+          <input name="placa" type="text" ng-model="vm.bus.placa" id="placa" class="form-control" placeholder="Placa de bus" required>
+          <div ng-messages="vm.form.busForm.bus.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere placa de bus.</p>
           </div>
         </div>
+
+
+        
+
         <div class="form-group" show-errors>
-          <label class="control-label" for="apellido_asistente">Asistente</label>
-          <input name="apellido_asistente" type="text" ng-model="vm.asistente.nombre_asistente" id="apellido_asistente" class="form-control" placeholder="Asistente" required>
-          <div ng-messages="vm.form.viajeForm.apellido_asistente.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Se requiere asistente</p>
+          <label class="control-label" for="costo">Costo</label>
+          <input name="costo" type="text" ng-model="vm.viaje.costo" id="costo" class="form-control" placeholder="costo" required>
+          <div ng-messages="vm.form.viajeForm.costo.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere el costo.</p>
           </div>
         </div>
-        <div class="form-group" show-errors>
-          <label class="control-label" for="bus">Bus</label>
-          <input name="bus" type="text" ng-model="vm.viaje.bus" id="bus" class="form-control" placeholder="bus" required>
-          <div ng-messages="vm.form.viajeForm.bus.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Se requiere bus</p>
-          </div>
-        </div>
+
+
+
+
+
+        
+        
                 
         <div class="form-group">
           <button type="submit" class="btn btn-default">{{vm.viaje._id ? 'Actualizar' : 'Crear'}}</button>

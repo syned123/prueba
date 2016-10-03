@@ -41,7 +41,7 @@ var AsistenteSchema = new Schema({
     trim: true
   },
   fecha_nacimiento: {
-    type: String,
+    type: Date,
     default: '',
     required: 'Please fill Asistente name',
     trim: true

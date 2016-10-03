@@ -1,6 +1,10 @@
 <section>
   <div class="page-header">
-    <h1 ng-bind="vm.viaje.name"></h1>
+    <h2><left>Horario: {{vm.viaje.horario}}</left></h2>
+    <h2><left>Destino: {{vm.viaje.destino}}</left></h2>
+    <h2><left>Turno de salida: {{vm.viaje.turno_salida}}</left></h2>
+    <h2><left>Bus: {{vm.bus.placa}}</left></h2>
+    
   </div>
   <div class="pull-right"
        ng-show="vm.viaje.isCurrentUserOwner">

@@ -11,8 +11,6 @@
           <th>Horario</th>
           <th>Destino</th>
           <th>Turno de salida</th>
-          <th>Chofer</th>
-          <th>Asistente</th>
           <th>Bus</th>
           </tr>
         </thead>
@@ -21,9 +19,7 @@
             <td>{{viaje.horario}}</td>
             <td>{{viaje.destino}}</td>
             <td>{{viaje.turno_salida}}</td>
-            <td>{{viaje.chofer}}</td>
-            <td>{{viaje.asistente}}</td>
-            <td>{{viaje.bus}}</td>
+            <td>{{bus.placa}}</td>
             <td>
              <div class="table-actions">
                <a clas="btn btn-default" title="Ver" href="/#!/viajes/{{viaje._id}}">

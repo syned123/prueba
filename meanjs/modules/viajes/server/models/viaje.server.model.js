@@ -28,23 +28,9 @@ var ViajeSchema = new Schema({
     required: 'Por favor introduzca apellidos del cliente',
     trim: true
   },
-  chofer: {
-    type: Schema.ObjectId, ref:"chofers",
-    default: '',
-    required: 'Por favor introduzca apellidos del cliente',
-    trim: true
-  },
-  asistente: {
-    type: Schema.ObjectId, ref:"asistentes",
-    default: '',
-    required: 'Por favor introduzca apellidos del cliente',
-    trim: true
-  },
   bus: {
-    type: Schema.ObjectId, ref:"buses",
-    default: '',
-    required: 'Por favor introduzca apellidos del cliente',
-    trim: true
+    type: String,
+    ref: 'bus'
   },
   created: {
     type: Date,

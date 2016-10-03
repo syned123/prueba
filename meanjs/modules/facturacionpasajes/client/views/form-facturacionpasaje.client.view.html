@@ -1,0 +1,77 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.facturacionpasaje._id ? 'Editar pasaje' : 'Nuevo pasaje'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.facturacionpasajeForm" class="form-horizontal" ng-submit="vm.save(vm.form.facturacionpasajeForm.$valid)" novalidate>
+      <fieldset>
+        <div class="col-md-3">
+      <h2><strong>V</strong>iaje</h2>
+      <div class="form-group" show-errors>
+          <label class="control-label" for="nombre_cliente">Viaje</label>
+          <input name="nombre_cliente" type="date" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Nombre cliente" required>
+          <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+      <h2><strong>C</strong>lientes</h2>
+      <div class="form-group" show-errors>
+          <label class="control-label" for="nombre_cliente">Nombre cliente</label>
+          <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Nombre cliente" required>
+          <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="nombre_cliente">Apeliido cliente</label>
+          <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Nombre cliente" required>
+          <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="nombre_cliente">CI o nit cliente</label>
+          <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Nombre cliente" required>
+          <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+      <h2><strong>D</strong>etalle pasaje</h2>
+      <div class="form-group" show-errors>
+          <label class="control-label" for="nombre_cliente">cliente</label>
+          <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Nombre cliente" required>
+          <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
+          </div>
+        </div>
+    </div>
+
+    <div class="col-md-8">
+      <h2><strong>B</strong>us</h2>
+      <img alt="MEAN.JS" class="img-responsive text-center" src="modules/facturacionpasajes/client/img/bus_normal1.jpg" />
+      <button type="button" class="btn btn-primary">Primary</button>
+
+      <!-- Indicates a successful or positive action -->
+      <button type="button" class="btn btn-success">Success</button>
+
+      <!-- Contextual button for informational alert messages -->
+      <button type="button" class="btn btn-danger">Info</button>
+
+    </div>
+  </div>
+
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.facturacionpasaje._id ? 'Actualizar' : 'Crear'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

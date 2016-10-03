@@ -1,19 +1,62 @@
 <section>
   <div class="page-header">
-    <h1>{{vm.tramo._id ? 'Edit Tramo' : 'New Tramo'}}</h1>
+    <h1>{{vm.tramo._id ? 'Editar Tramo' : 'Nuevo Tramo'}}</h1>
   </div>
   <div class="col-md-12">
     <form name="vm.form.tramoForm" class="form-horizontal" ng-submit="vm.save(vm.form.tramoForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
-          <label class="control-label" for="name">Name</label>
-          <input name="name" type="text" ng-model="vm.tramo.name" id="name" class="form-control" placeholder="Name" required>
-          <div ng-messages="vm.form.tramoForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Tramo name is required.</p>
+          <label class="control-label" for="nombre_tramo">Nombre de tramo</label>
+          <input name="nombre_tramo" type="text" ng-model="vm.tramo.nombre_tramo" id="nombre_tramo" class="form-control" placeholder="nombre_tramo" required>
+          <div ng-messages="vm.form.tramoForm.nombre_tramo.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere el nombre del Tramo.</p>
           </div>
         </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="inicio_tramo">Incio de tramo</label>
+          <input name="inicio_tramo" type="text" ng-model="vm.tramo.inicio_tramo" id="inicio_tramo" class="form-control" placeholder="inicio_tramo" required>
+          <div ng-messages="vm.form.tramoForm.inicio_tramo.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere el nombre del Tramo.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="final_tramo">Final de tramo</label>
+          <input name="final_tramo" type="text" ng-model="vm.tramo.final_tramo" id="final_tramo" class="form-control" placeholder="final_tramo" required>
+          <div ng-messages="vm.form.tramoForm.final_tramo.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere el nombre del Tramo.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="duracion">Duracion en horas</label>
+          <input name="duracion" type="text" ng-model="vm.tramo.duracion" id="duracion" class="form-control" placeholder="duracion" required>
+          <div ng-messages="vm.form.tramoForm.duracion.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere el nombre del Tramo.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="kilometros">Kilometros</label>
+          <input name="kilometros" type="text" ng-model="vm.tramo.kilometros" id="kilometros" class="form-control" placeholder="kilometros" required>
+          <div ng-messages="vm.form.tramoForm.kilometros.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere el nombre del Tramo.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="precio_dia">Precio en el dia</label>
+          <input name="Precio_dia" type="text" ng-model="vm.tramo.Precio_dia" id="Precio_dia" class="form-control" placeholder="Precio_dia" required>
+          <div ng-messages="vm.form.tramoForm.Precio_dia.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere el nombre del Tramo.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="precio_noche">Precio en la noche</label>
+          <input name="precio_noche" type="text" ng-model="vm.tramo.precio_noche" id="precio_noche" class="form-control" placeholder="precio_noche" required>
+          <div ng-messages="vm.form.tramoForm.precio_noche.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere el nombre del Tramo.</p>
+          </div>
+        </div>
+
         <div class="form-group">
-          <button type="submit" class="btn btn-default">{{vm.tramo._id ? 'Update' : 'Create'}}</button>
+          <button type="submit" class="btn btn-default">{{vm.tramo._id ? 'Actualizar' : 'Crear'}}</button>
         </div>
         <div ng-show="vm.error" class="text-danger">
           <strong ng-bind="vm.error"></strong>

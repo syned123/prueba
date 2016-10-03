@@ -1,0 +1,22 @@
+<section>
+  <div class="page-header">
+    <h1>Facturacionpasajes</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="facturacionpasaje in vm.facturacionpasajes"
+       ui-sref="facturacionpasajes.view({ facturacionpasajeId: facturacionpasaje._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="facturacionpasaje.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="facturacionpasaje.user" ng-bind="facturacionpasaje.user.displayName"></span>
+        <span ng-if="!facturacionpasaje.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="facturacionpasaje.name"></h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.facturacionpasajes.$resolved && !vm.facturacionpasajes.length">
+    No Facturacionpasajes yet, why don't you <a ui-sref="facturacionpasajes.create">create one</a>?
+  </div>
+</section>
