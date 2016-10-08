@@ -10,6 +10,12 @@ var mongoose = require('mongoose'),
  * Chofer Schema
  */
 var ChoferSchema = new Schema({
+  ci: {
+    type: String,
+    default: '',
+    required: 'Please fill Chofer name',
+    trim: true
+  },
   name: {
     type: String,
     default: '',

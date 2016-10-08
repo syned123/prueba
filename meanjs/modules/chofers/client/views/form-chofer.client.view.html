@@ -6,7 +6,13 @@
   <div class="col-md-12">
     <form name="vm.form.choferForm" class="form-horizontal" ng-submit="vm.save(vm.form.choferForm.$valid)" novalidate>
       <fieldset>
-        
+        <div class="form-group" show-errors>
+          <label class="control-label" for="ci">Celula de identidad</label>
+          <input name="ci" type="text" ng-model="vm.chofer.ci" id="ci" class="form-control" placeholder="celula de identidad" required>
+          <div ng-messages="vm.form.choferForm.ci.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere celula de asistene.</p>
+          </div>
+        </div>
         <div class="form-group" show-errors>
           <label class="control-label" for="name">Nombres</label>
           <input name="name" type="text" ng-model="vm.chofer.name" id="name" class="form-control" placeholder="Nombre" required>
@@ -50,7 +56,7 @@
 
         <div class="form-group" show-errors>
           <label class="control-label" for="birthdate">Fecha de nacimiento</label>
-          <input name="birthdate" type="date" ng-model="vm.chofer.birthdate" id="birthdate" class="form-control" placeholder="fecha de nacimiento" required>
+          <input name="birthdate" type="text" ng-model="vm.chofer.birthdate" id="birthdate" class="form-control" placeholder="fecha de nacimiento" required>
           <div ng-messages="vm.form.choferForm.name.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Se requiere fecha de nacimiento.</p>
           </div>

@@ -1,6 +1,7 @@
 <section>
   <div class="page-header">
-    <h1>Viajes</h1>
+    <center><h1>Viajes</h1></center>
+    <A class="btn btn-success" HREF="http://localhost:3000/viajes/create">Crear</A>
   </div>
 
 
@@ -11,7 +12,11 @@
           <th>Horario</th>
           <th>Destino</th>
           <th>Turno de salida</th>
-          <th>Bus</th>
+          <th>CI Chofer</th>
+          <th>Placa Bus</th>
+          <th>CI Asistente</th>
+          <th>Tramos</th>
+          <th>Costo</th>
           </tr>
         </thead>
           <tbody>
@@ -19,7 +24,11 @@
             <td>{{viaje.horario}}</td>
             <td>{{viaje.destino}}</td>
             <td>{{viaje.turno_salida}}</td>
-            <td>{{bus.placa}}</td>
+            <td>{{viaje.chofer}}</td>
+            <td>{{viaje.bus}}</td>
+            <td>{{viaje.asistente}}</td>
+            <td>{{viaje.tramo}}</td>
+            <td>{{viaje.costo}}</td>
             <td>
              <div class="table-actions">
                <a clas="btn btn-default" title="Ver" href="/#!/viajes/{{viaje._id}}">
@@ -35,20 +44,7 @@
           </tbody>
       </table>
     </div>
-  <div class="list-group">
-    <a ng-repeat="viaje in vm.viajes"
-       ui-sref="viajes.view({ viajeId: viaje._id })"
-       class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span ng-bind="viaje.created | date:'mediumDate'"></span>
-        by
-        <span ng-if="viaje.user" ng-bind="viaje.user.displayName"></span>
-        <span ng-if="!viaje.user">Deleted User</span>
-      </small>
-      <h4 class="list-group-item-heading" ng-bind="viaje.name"></h4>
-    </a>
-  </div>
+  
   <div class="alert alert-warning text-center" ng-if="vm.viajes.$resolved && !vm.viajes.length">
     No existen viajes por que no <a ui-sref="viajes.create">Crea uno</a>?
   </div>

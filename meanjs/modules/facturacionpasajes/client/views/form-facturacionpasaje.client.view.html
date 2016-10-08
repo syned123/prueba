@@ -2,18 +2,35 @@
   <div class="page-header">
     <h1>{{vm.facturacionpasaje._id ? 'Editar pasaje' : 'Nuevo pasaje'}}</h1>
   </div>
+  
   <div class="col-md-12">
     <form name="vm.form.facturacionpasajeForm" class="form-horizontal" ng-submit="vm.save(vm.form.facturacionpasajeForm.$valid)" novalidate>
       <fieldset>
         <div class="col-md-3">
       <h2><strong>V</strong>iaje</h2>
-      <div class="form-group" show-errors>
-          <label class="control-label" for="nombre_cliente">Viaje</label>
-          <input name="nombre_cliente" type="date" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Nombre cliente" required>
-          <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="fecha_salida">fecha_salida</label>
+          <input name="fecha_salida" type="text" ng-model="vm.facturacionpasajes.fecha_salida" id="fecha_salida" class="form-control" placeholder="fecha de salida" required>
+          <div ng-messages="vm.form.facturacionpasajesForm.fecha_salida.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
           </div>
         </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="fecha_llegada">fecha_llegada</label>
+          <input name="fecha_llegada" type="text" ng-model="vm.facturacionpasajes.fecha_llegada" id="fecha_llegada" class="form-control" placeholder="fecha de llegada" required>
+          <div ng-messages="vm.form.facturacionpasajesForm.fecha_llegada.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="fecha_llegada">Hora del viaje</label>
+          <input name="fecha_llegada" type="text" ng-model="vm.facturacionpasajes.fecha_llegada" id="fecha_llegada" class="form-control" placeholder="Hora del viaje" required>
+          <div ng-messages="vm.form.facturacionpasajesForm.fecha_llegada.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
+          </div>
+        </div>
+
     </div>
     <div class="col-md-3">
       <h2><strong>C</strong>lientes</h2>
@@ -26,42 +43,64 @@
         </div>
         <div class="form-group" show-errors>
           <label class="control-label" for="nombre_cliente">Apeliido cliente</label>
-          <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Nombre cliente" required>
+          <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Apellidos cliente" required>
           <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
           </div>
         </div>
         <div class="form-group" show-errors>
           <label class="control-label" for="nombre_cliente">CI o nit cliente</label>
-          <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Nombre cliente" required>
+          <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Ci o nit cliente" required>
           <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
           </div>
         </div>
     </div>
+    <div class="col-md-6">
+        <h2><strong>B</strong>us</h2>
+        <span class="label label-success">Libre</span>
+                <span class="label label-warning">Reservado</span>
+        <span class="label label-danger">Vendido</span>
+
+        <img alt="MEAN.JS" class="img-responsive text-center" src="modules/facturacionpasajes/client/img/bus_normal1.jpg" />
+      </div>
     <div class="col-md-3">
       <h2><strong>D</strong>etalle pasaje</h2>
       <div class="form-group" show-errors>
-          <label class="control-label" for="nombre_cliente">cliente</label>
-          <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Nombre cliente" required>
+          <label class="control-label" for="nombre_cliente">Bus</label>
+          <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="bus" required>
+          <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="nombre_cliente">Destino</label>
+          <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Destino" required>
+          <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="nombre_cliente">Asientos</label>
+          <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Asientos" required>
           <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
           </div>
         </div>
     </div>
 
-    <div class="col-md-8">
-      <h2><strong>B</strong>us</h2>
-      <img alt="MEAN.JS" class="img-responsive text-center" src="modules/facturacionpasajes/client/img/bus_normal1.jpg" />
-      <button type="button" class="btn btn-primary">Primary</button>
-
-      <!-- Indicates a successful or positive action -->
-      <button type="button" class="btn btn-success">Success</button>
-
-      <!-- Contextual button for informational alert messages -->
-      <button type="button" class="btn btn-danger">Info</button>
-
-    </div>
+      
+    
+      <div class="col-md-3">
+        <div class="form-group" show-errors>
+          <label class="control-label" for="nombre_cliente">Cantidad a pagar</label>
+          <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Cantidad a pagar" required>
+          <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
+          </div>
+        </div>
+      </div>
+    
   </div>
 
 

@@ -18,13 +18,13 @@
 
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'tramos', {
-      title: 'List Tramos',
+      title: 'Lista de Tramos',
       state: 'tramos.list'
     });
 
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'tramos', {
-      title: 'Create Tramo',
+      title: 'Crear Tramo',
       state: 'tramos.create',
       roles: ['user']
     });

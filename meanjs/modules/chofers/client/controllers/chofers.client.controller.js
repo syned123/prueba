@@ -1,6 +1,5 @@
 (function () {
   'use strict';
-
   // Chofers controller
   angular
     .module('chofers')
@@ -10,7 +9,6 @@
 
   function ChofersController ($scope, $state, $window, Authentication, chofer) {
     var vm = this;
-
     vm.authentication = Authentication;
     vm.chofer = chofer;
     vm.error = null;
@@ -19,7 +17,7 @@
     vm.save = save;
     // Remove existing Chofer
     function remove() {
-      if ($window.confirm('Are you sure you want to delete?')) {
+      if ($window.confirm('Estas seguro que quieres borrarlo?')) {
         vm.chofer.$remove($state.go('chofers.list'));
       }
     }

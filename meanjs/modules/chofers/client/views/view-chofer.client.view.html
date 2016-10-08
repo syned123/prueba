@@ -1,6 +1,9 @@
 <section>
   <div class="page-header">
-
+  <div class="pull-right"><a class="btn btn-primary" href="http://localhost:3000/buses">Atras</a>
+  </div>
+  <center><h1>Datos del chofer</h1></center>
+    <h2><left>Celula identidad: {{vm.chofer.ci}}</left></h2>
     <h2><left>Nombre: {{vm.chofer.name}}</left></h2>
     <h2><left>Apellidos: {{vm.chofer.last_name}}</left></h2>
     <h2><left>Celular: {{vm.chofer.cell_phone}}</left></h2>
@@ -15,10 +18,10 @@
        ng-show="vm.chofer.isCurrentUserOwner">
     <a class="btn btn-primary"
        ui-sref="chofers.edit({ choferId: vm.chofer._id })">
-      <i class="glyphicon glyphicon-edit"></i>
+      <i class="glyphicon glyphicon-edit"> Actualizar</i>
     </a>
     <a class="btn btn-primary" ng-click="vm.remove()">
-      <i class="glyphicon glyphicon-trash"></i>
+      <i class="glyphicon glyphicon-trash"> Eliminar</i>
     </a>
   </div>
   <small>

@@ -1,17 +1,23 @@
 <section>
   <div class="page-header">
-    <h1 ng-bind="vm.bus.placa"></h1>
-    <h1 ng-bind="vm.bus.color"></h1>
-    <h1 ng-bind="vm.bus.pisos"></h1>
+  <div class="pull-right"><a class="btn btn-primary" href="http://localhost:3000/buses">atras</a>
+  </div>
+    <center><h1>Datos Del Bus</h1></center>
+    <h2><left>Placa: {{vm.bus.placa}}</left></h2>
+    <h2><left>Color: {{vm.bus.color}}</left></h2>
+    <h2><left>Modelo: {{vm.bus.modelo}}</left></h2>
+    <h2><left>Cantidad de asientos: {{vm.bus.asientos}}</left></h2>
+    <h2><left>Tipo de bus: {{vm.bus.tipo_bus}}</left></h2>
+    <h2><left>Cantidad de pisos: {{vm.bus.pisos}}</left></h2>
   </div>
   <div class="pull-right"
        ng-show="vm.bus.isCurrentUserOwner">
     <a class="btn btn-primary"
        ui-sref="buses.edit({ busId: vm.bus._id })">
-      <i class="glyphicon glyphicon-edit"></i>
+      <i class="glyphicon glyphicon-edit"> Actualizar</i>
     </a>
     <a class="btn btn-primary" ng-click="vm.remove()">
-      <i class="glyphicon glyphicon-trash"></i>
+      <i class="glyphicon glyphicon-trash"> Eliminar</i>
     </a>
   </div>
   <small>

@@ -20,9 +20,10 @@
           </div>
         </div>
 
-         <div class="form-group" show-errors>
+        <div class="form-group" show-errors>
           <label class="control-label" for="turno_salida">Turno de salida</label>
           <select name="turno_salida"  ng-model="vm.viaje.turno_salida" id="turno_salida" class="form-control" placeholder="turno de salida" required>
+            <option value="">--Elige un turno--</option>
             <option>Dia</option>
             <option>Tarde</option>
             <option>Noche</option>
@@ -30,35 +31,65 @@
           <div ng-messages="vm.form.viajeForm.turno_salida.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Se requiere turno de salida</p>
           </div>
-        </div>  
+        </div>
 
-        
-        <div class="form-group" show-errors>
-          <label class="control-label" for="bus">Placa</label>
-          <input name="placa" type="text" ng-model="vm.bus.placa" id="placa" class="form-control" placeholder="Placa de bus" required>
-          <div ng-messages="vm.form.busForm.bus.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Se requiere placa de bus.</p>
+        <div class="form-group" show-errors ng-controller="ChofersListController">
+          <label class="control-label" for="chofer">Chofer</label>
+          <select name="chofer" 
+          ng-options="chofer.ci as chofer.ci for chofer in vm.choferes"   
+          ng-model="vm.viaje.chofer" id="chofer" class="form-control" required>
+            <option value="">--Elige un chofer--</option>
+          </select>
+          <div ng-messages="vm.form.viajeForm.chofer.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere datos del chofer</p>
           </div>
         </div>
 
 
-        
+        <div class="form-group" show-errors ng-controller="BusesListController">
+          <label class="control-label" for="bus">Bus</label>
+          <select name="bus" 
+          ng-options="bus.placa as bus.placa for bus in vm.buses"   
+          ng-model="vm.viaje.bus" id="bus" class="form-control" required>
+            <option value="">--Elige un bus--</option>
+          </select>
+          <div ng-messages="vm.form.viajeForm.bus.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere datos del bus</p>
+          </div>
+        </div>  
 
+        <div class="form-group" show-errors ng-controller="AsistentesListController">
+          <label class="control-label" for="asistente">Asistente</label>
+          <select name="asistente" 
+          ng-options="asistente.ci as asistente.ci for asistente in vm.asistentes"   
+          ng-model="vm.viaje.asistente" id="asistente" class="form-control" required>
+            <option value="">--Elige un asistente--</option>
+          </select>
+          <div ng-messages="vm.form.viajeForm.asistente.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere datos del asistente</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors ng-controller="TramosListController">
+          <label class="control-label" for="tramo">Tramo</label>
+          <select name="tramo" 
+          ng-options="tramo.name as tramo.name for tramo in vm.tramos"   
+          ng-model="vm.viaje.tramo" id="tramo" class="form-control" required>
+            <option value="">--Elige un tramo--</option>
+          </select>
+          <div ng-messages="vm.form.viajeForm.asistente.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere datos del tramo</p>
+          </div>
+        </div>
+ 
         <div class="form-group" show-errors>
           <label class="control-label" for="costo">Costo</label>
           <input name="costo" type="text" ng-model="vm.viaje.costo" id="costo" class="form-control" placeholder="costo" required>
           <div ng-messages="vm.form.viajeForm.costo.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Se requiere el costo.</p>
           </div>
-        </div>
-
-
-
-
-
-        
-        
-                
+        </div>    
+                        
         <div class="form-group">
           <button type="submit" class="btn btn-default">{{vm.viaje._id ? 'Actualizar' : 'Crear'}}</button>
         </div>

@@ -38,12 +38,23 @@
           </div>
         </div>
 
-
-       
-
+        <div class="form-group" show-errors>
+          <label class="control-label" for="tipo_bus">Tipo de bus</label>
+          <select name="tipo_bus"  ng-model="vm.bus.tipo_bus" id="tipo_bus" class="form-control" required>
+            <option value="">--Elige un tipo de bus--</option>
+            <option>Bus_Normal</option>
+            <option>Bus_SemiCama</option>
+            <option>Bus_Cama</option>
+          </select>
+          <div ng-messages="vm.form.busForm.tipo_bus.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere tipo de bus</p>
+          </div>
+        </div>
+   
         <div class="form-group" show-errors>
           <label class="control-label" for="pisos">Cantidad de pisos</label>
           <select name="pisos"  ng-model="vm.bus.pisos" id="pisos" class="form-control" placeholder="Cantidad de pisos" required>
+            <option value="">--Elige la cantidad de pisos--</option>
             <option>1</option>
             <option>2</option>
           </select>
@@ -51,7 +62,7 @@
             <p class="help-block error-text" ng-message="required">Se requiere cantidad de pisos de bus</p>
           </div>
         </div>
-
+        
           
 
 

@@ -1,19 +1,19 @@
 <section>
   <div class="page-header">
-    <h1>Buses</h1>
-        
+    <center><h1>Buses</h1></center>
+    <A class="btn btn-success" HREF="http://localhost:3000/buses/create">Crear</A>       
   </div>
-
     <div>    
-      <table class="table">
+      <table class="table table-bordered">
         <thead>
          <tr>
           <th>Placa</th>
           <th>Color</th>
           <th>Modelo</th>
           <th>Cantidad de asientos</th>
+          <th>Tipo de bus</th>
           <th>Cantidad de pisos</th>
-         </tr>
+        </tr>
         </thead>
           <tbody>
            <tr ng-repeat = "bus in vm.buses">
@@ -21,7 +21,9 @@
             <td>{{bus.color}}</td>
             <td>{{bus.modelo}}</td>
             <td>{{bus.asientos}}</td>
+            <td>{{bus.tipo_bus}}</td>
             <td>{{bus.pisos}}</td>
+            
             <td>
              <div class="table-actions">
                <a clas="btn btn-default" title="Ver" href="/#!/buses/{{bus._id}}">

@@ -40,6 +40,16 @@ var BusSchema = new Schema({
     required: 'Please fill Bus color',
     trim: true
   },
+  tipo_bus: {
+    type: String,
+    default: '',
+    required: 'Please fill Bus color',
+    trim: true
+  },
+  profileImageURL: {
+    type: String,
+    default: 'modules/users/client/img/profile/default.png'
+  },
   created: {
     type: Date,
     default: Date.now

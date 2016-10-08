@@ -13,7 +13,43 @@ var TramoSchema = new Schema({
   name: {
     type: String,
     default: '',
-    required: 'Please fill Tramo name',
+    required: 'Por favor, rellene el nombre Tramo',
+    trim: true
+  },
+  inicio_tramo: {
+    type: String,
+    default: '',
+    required: 'Por favor, rellene el inicio del Tramo',
+    trim: true
+  },
+  final_tramo: {
+    type: String,
+    default: '',
+    required: 'Por favor, rellene el inicio del Tramo',
+    trim: true
+  },
+  duracion: {
+    type: String,
+    default: '',
+    required: 'Por favor, rellene el inicio del Tramo',
+    trim: true
+  },
+  kilometros: {
+    type: String,
+    default: '',
+    required: 'Por favor, rellene el inicio del Tramo',
+    trim: true
+  },
+  precio_dia: {
+    type: String,
+    default: '',
+    required: 'Por favor, rellene el inicio del Tramo',
+    trim: true
+  },
+  precio_noche: {
+    type: String,
+    default: '',
+    required: 'Por favor, rellene el inicio del Tramo',
     trim: true
   },
   created: {

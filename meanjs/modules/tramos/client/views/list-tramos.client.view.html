@@ -1,21 +1,46 @@
 <section>
   <div class="page-header">
-    <h1>Tramos</h1>
+    <center><h1>Tramos</h1></center>
+    <A class="btn btn-success" HREF="http://localhost:3000/tramos/create">Crear</A>
   </div>
-  <div class="list-group">
-    <a ng-repeat="tramo in vm.tramos"
-       ui-sref="tramos.view({ tramoId: tramo._id })"
-       class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span ng-bind="tramo.created | date:'mediumDate'"></span>
-        by
-        <span ng-if="tramo.user" ng-bind="tramo.user.displayName"></span>
-        <span ng-if="!tramo.user">Deleted User</span>
-      </small>
-      <h4 class="list-group-item-heading" ng-bind="tramo.name"></h4>
-    </a>
-  </div>
+  <div>    
+      <table class="table table-bordered">
+        <thead>
+         <tr>
+          <th>Nombre del tramo</th>
+          <th>Inicio del tramo</th>
+          <th>Final del tramo</th>
+          <th>Duracion</th>
+          <th>Kilometros</th>
+          <th>Precio dia</th>
+          <th>Precio noche</th>
+         </tr>
+        </thead>
+          <tbody>
+           <tr ng-repeat = "tramo in vm.tramos">
+            <td>{{tramo.name}}</td>
+            <td>{{tramo.inicio_tramo}}</td>
+            <td>{{tramo.final_tramo}}</td>
+            <td>{{tramo.duracion}}</td>
+            <td>{{tramo.kilometros}}</td>
+            <td>{{tramo.precio_dia}}</td>
+            <td>{{tramo.precio_noche}}</td>
+            <td>
+             <div class="table-actions">
+               <a clas="btn btn-default" title="Ver" href="/#!/tramos/{{tramo._id}}">
+                <span class="glyphicon glyphicon-eye-open"></span>
+               </a>
+               <a clas="btn btn-default" title="Editar" href="/#!/tramos/{{tramo._id}}/edit">
+                <span class="glyphicon glyphicon-edit"></span>
+               </a>
+               
+             </div>
+            </td>
+            </tr>         
+          </tbody>
+      </table>
+    </div>
+  
   <div class="alert alert-warning text-center" ng-if="vm.tramos.$resolved && !vm.tramos.length">
     No Tramos yet, why don't you <a ui-sref="tramos.create">create one</a>?
   </div>

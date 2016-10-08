@@ -10,6 +10,12 @@ var mongoose = require('mongoose'),
  * Asistente Schema
  */
 var AsistenteSchema = new Schema({
+  ci: {
+    type: String,
+    default: '',
+    required: 'Por favor introduzca celula_identidad',
+    trim: true
+  },
   nombre_asistente: {
     type: String,
     default: '',
@@ -19,31 +25,31 @@ var AsistenteSchema = new Schema({
   apellido_asistente: {
     type: String,
     default: '',
-    required: 'Please fill Asistente name',
+    required: 'Por favor introduzca apellido_asistente',
     trim: true
   },
   celular: {
     type: String,
     default: '',
-    required: 'Please fill Asistente name',
+    required: 'Por favor introduzca celular',
     trim: true
   },
   direccion: {
     type: String,
     default: '',
-    required: 'Please fill Asistente name',
+    required: 'por favor introduzca direccion',
     trim: true
   },
   edad: {
     type: String,
     default: '',
-    required: 'Please fill Asistente name',
+    required: 'Por favor introduzca edad',
     trim: true
   },
   fecha_nacimiento: {
-    type: Date,
+    type: String,
     default: '',
-    required: 'Please fill Asistente name',
+    required: 'Por favor introduzca fecha_nacimiento',
     trim: true
   },
   created: {

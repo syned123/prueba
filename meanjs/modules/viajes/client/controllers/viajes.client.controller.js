@@ -1,16 +1,18 @@
 (function () {
   'use strict';
-
   // Viajes controller
   angular
     .module('viajes')
     .controller('ViajesController', ViajesController);
 
-  ViajesController.$inject = ['$scope', '$state', '$window', 'Authentication', 'viajeResolve'];
+  ViajesController.$inject = ['$scope', '$state', '$window', 'Authentication', 'viajeResolve', 'ChofersService', 'BusesService', 'AsistentesService', 'TramosService'];
 
-  function ViajesController ($scope, $state, $window, Authentication, viaje) {
+  function ViajesController ($scope, $state, $window, Authentication, viaje, ChofersService, BusesService, AsistentesService, TramosService) {
     var vm = this;
-
+    vm.tramos = TramosService.query();
+    vm.choferes = ChofersService.query();
+    vm.buses = BusesService.query();
+    vm.asistentes = AsistentesService.query();
     vm.authentication = Authentication;
     vm.viaje = viaje;
     vm.error = null;

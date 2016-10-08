@@ -1,0 +1,26 @@
+<section>
+  <div class="page-header">
+    <h1 ng-bind="vm.encomienda.name"></h1>
+  </div>
+  <div class="pull-right"
+       ng-show="vm.encomienda.isCurrentUserOwner">
+    <a class="btn btn-primary"
+       ui-sref="encomiendas.edit({ encomiendaId: vm.encomienda._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">
+      Posted on
+      <span ng-bind="vm.encomienda.created | date:'mediumDate'"></span>
+      by
+      <span ng-if="vm.encomienda.user"
+            ng-bind="vm.encomienda.user.displayName"></span>
+      <span ng-if="!vm.encomienda.user">Deleted User</span>
+    </em>
+  </small>
+  <p class="lead" ng-bind="vm.encomienda.content"></p>
+</section>

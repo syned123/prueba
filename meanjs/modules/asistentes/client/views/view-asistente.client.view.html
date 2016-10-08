@@ -1,15 +1,24 @@
 <section>
   <div class="page-header">
-    <h1 ng-bind="vm.asistente.name"></h1>
+  <div class="pull-right"><a class="btn btn-primary" href="http://localhost:3000/asistentes">atras</a>
+  </div>
+    <center><h1>Datos del asistente</h1></center>
+    <h2><left>Celula identidad: {{vm.asistente.ci}}</left></h2>
+    <h2><left>Nombres: {{vm.asistente.nombre_asistente}}</left></h2>
+    <h2><left>Apellidos: {{vm.asistente.apellido_asistente}}</left></h2>
+    <h2><left>Celular: {{vm.asistente.celular}}</left></h2>
+    <h2><left>Direccion: {{vm.asistente.direccion}}</left></h2>
+    <h2><left>Edad: {{vm.asistente.edad}}</left></h2>
+    <h2><left>Fecha de nacimiento: {{vm.asistente.fecha_nacimiento}}</left></h2>
   </div>
   <div class="pull-right"
        ng-show="vm.asistente.isCurrentUserOwner">
     <a class="btn btn-primary"
        ui-sref="asistentes.edit({ asistenteId: vm.asistente._id })">
-      <i class="glyphicon glyphicon-edit"></i>
+      <i class="glyphicon glyphicon-edit"> Editar</i>
     </a>
     <a class="btn btn-primary" ng-click="vm.remove()">
-      <i class="glyphicon glyphicon-trash"></i>
+      <i class="glyphicon glyphicon-trash"> Eliminar</i>
     </a>
   </div>
   <small>
