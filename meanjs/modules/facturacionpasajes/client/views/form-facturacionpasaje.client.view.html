@@ -63,46 +63,137 @@
         <span class="label label-danger">Vendido</span>
 
         <img alt="MEAN.JS" class="img-responsive text-center" src="modules/facturacionpasajes/client/img/bus_normal1.jpg" />
-      </div>
-    <div class="col-md-3">
-      <h2><strong>D</strong>etalle pasaje</h2>
-      <div class="form-group" show-errors>
-          <label class="control-label" for="nombre_cliente">Bus</label>
-          <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="bus" required>
-          <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
-          </div>
-        </div>
-        <div class="form-group" show-errors>
-          <label class="control-label" for="nombre_cliente">Destino</label>
-          <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Destino" required>
-          <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
-          </div>
-        </div>
-        <div class="form-group" show-errors>
-          <label class="control-label" for="nombre_cliente">Asientos</label>
-          <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Asientos" required>
-          <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
-          </div>
-        </div>
+        <table style="width: 72.6%;position: relative;top: -250px;left: 29px;height: 84%;">
+        
+        <tr>
+            <td style="height: 80px;">
+                <div style="width: 46.5%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 31});"></div>
+            </td>
+            <td style="height: 85px;">
+                <div style="width: 46.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 27});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 42.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 23});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 44.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 19});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 42.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 15});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 46.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 11});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 49.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 7});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 49.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 3});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 52.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 1});"></div>
+            </td>
+        </tr>
+        </table>
+         <table style="width: 72.6%;position: relative;top: -294px;left: 28px;height: 84%;">
+        
+        <tr>
+            <td style="height: 80px;">
+                <div style="width: 46.5%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 32});"></div>
+            </td>
+            <td style="height: 85px;">
+                <div style="width: 46.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 28});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 42.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 24});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 44.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 20});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 42.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 16});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 46.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 12});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 49.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 8});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 49.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 4});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 52.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 2});"></div>
+            </td>
+        </tr>
+        </table>
+         <table style="width: 9.6%;position: relative;top: -344px;left: 27px;height: 84%;">
+            <tr>
+            <td style="height: 80px;">
+                <div style="width: 46.5%;height: 34%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 33});"></div>
+            </td>
+            </tr>
+          </table>
+          <table style="width: 64.6%;position: relative;top: -391px;left: 28px;height: 84%;">
+        
+        <tr>
+            <td style="height: 80px;">
+                <div style="width: 46.5%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 34});"></div>
+            </td>
+            <td style="height: 85px;">
+                <div style="width: 46.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 29});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 42.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 25});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 44.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 21});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 42.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 17});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 46.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 13});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 49.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 9});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 49.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 5});"></div>
+            </td>
+        </tr>
+        </table>
+        <table style="width: 64.6%;position: relative;top: -435px;left: 28px;height: 84%;">
+        
+        <tr>
+            <td style="height: 80px;">
+                <div style="width: 46.5%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 35});"></div>
+            </td>
+            <td style="height: 85px;">
+                <div style="width: 46.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 30});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 42.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 26});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 44.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 22});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 42.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 18});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 46.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 14});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 49.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 10});"></div>
+            </td>
+            <td style="height: 80px;">
+                <div style="width: 49.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 6});"></div>
+            </td>
+        </tr>
+        </table>
     </div>
-
-      
     
-      <div class="col-md-3">
-        <div class="form-group" show-errors>
-          <label class="control-label" for="nombre_cliente">Cantidad a pagar</label>
-          <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Cantidad a pagar" required>
-          <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
-          </div>
-        </div>
-      </div>
-    
-  </div>
-
 
         <div class="form-group">
           <button type="submit" class="btn btn-default">{{vm.facturacionpasaje._id ? 'Actualizar' : 'Crear'}}</button>

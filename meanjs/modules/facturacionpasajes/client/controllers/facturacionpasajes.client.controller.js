@@ -17,7 +17,28 @@
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
-
+    vm.view = {
+      selectField: function(field, status) {
+        console.log(field, status);
+        if (vm.fieldsCache.selected && field && field.field === vm.fieldsCache.selected.field) {
+          vm.fieldsCache.selected = {};
+          delete vm.fieldsCache.reserved[field.field];
+          delete vm.fieldsCache.sold[field.field];
+        }
+        if (field && status) {
+          if (status === 'sold') {
+            vm.fieldsCache.sold[field.field] = true;
+          } else if (status === 'reserved') {
+            vm.fieldsCache.reserved[field.field] = true;
+          }
+        }
+      }
+    };
+    vm.fieldsCache = {
+      reserved: {},
+      selected: {},
+      sold: {}
+    };
     // Remove existing Facturacionpasaje
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {
