@@ -99,7 +99,7 @@ exports.clienteByID = function(req, res, next, id) {
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).send({
-      message: 'Cliente is invalid'
+      message: 'Cliente no es valido'
     });
   }
 
@@ -108,7 +108,7 @@ exports.clienteByID = function(req, res, next, id) {
       return next(err);
     } else if (!cliente) {
       return res.status(404).send({
-        message: 'No Cliente with that identifier has been found'
+        message: 'No se ha encontrado Cliente con ese identificador'
       });
     }
     req.cliente = cliente;

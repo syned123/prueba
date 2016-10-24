@@ -6,21 +6,28 @@
     .module('encomiendas')
     .controller('EncomiendasController', EncomiendasController);
 
-  EncomiendasController.$inject = ['$scope', '$state', '$window', 'Authentication', 'encomiendaResolve', 'ViajesService'];
+  EncomiendasController.$inject = ['$scope', '$http', '$state', '$window', 'Authentication', 'encomiendaResolve', 'ViajesService'];
 
-  function EncomiendasController ($scope, $state, $window, Authentication, encomienda, ViajesService) {
+  function EncomiendasController ($scope, $http, $state, $window, Authentication, encomienda, ViajesService, clienteResolve) {
     var vm = this;
     vm.viajes = ViajesService.query();
     vm.authentication = Authentication;
     vm.encomienda = encomienda;
     vm.error = null;
+    vm.cliente = {};
     vm.form = {};
+    vm.enviar = {};
     vm.remove = remove;
     vm.save = save;
-
+    $scope.enviar = function() {
+      $http.post('http://localhost:3000/api/clientes', vm.cliente)
+      .success(function(res) {
+        console.log(res);
+      });
+    };
     // Remove existing Encomienda
     function remove() {
-      if ($window.confirm('Are you sure you want to delete?')) {
+      if ($window.confirm('¿Estas seguro que quieres borrarlo?')) {
         vm.encomienda.$remove($state.go('encomiendas.list'));
       }
     }

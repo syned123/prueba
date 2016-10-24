@@ -9,7 +9,7 @@
           <label class="control-label" for="ci">Celula de identidad</label>
           <input name="ci" type="text" ng-model="vm.asistente.ci" id="ci" class="form-control" placeholder="celula de identidad" required>
           <div ng-messages="vm.form.asistenteForm.ci.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Se requiere nombre de asistene.</p>
+            <p class="help-block error-text" ng-message="required">Se requiere Celulda de identidad de asistene.</p>
           </div>
         </div>
         <div class="form-group" show-errors>
@@ -50,7 +50,7 @@
 
         <div class="form-group" show-errors>
           <label class="control-label" for="fecha_nacimiento">Fecha de nacimiento</label>
-          <input name="fecha_nacimiento" type="text" ng-model="vm.asistente.fecha_nacimiento" id="fecha_nacimiento" class="form-control" placeholder="fecha de nacimiento" required>
+          <input name="fecha_nacimiento" type="date" ng-model="vm.asistente.fecha_nacimiento" id="fecha_nacimiento" class="form-control" placeholder="fecha de nacimiento" required>
           <div ng-messages="vm.form.asistenteForm.fecha_nacimiento.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Se requiere fecha de nacimiento.</p>
           </div>
@@ -59,7 +59,7 @@
 
 
         <div class="form-group">
-          <button type="submit" class="btn btn-default">{{vm.asistente._id ? 'Actualizar' : 'Crear'}}</button>
+          <button type="submit" class="btn btn-success">{{vm.asistente._id ? 'Actualizar' : 'Crear'}}</button>
         </div>
         <div ng-show="vm.error" class="text-danger">
           <strong ng-bind="vm.error"></strong>

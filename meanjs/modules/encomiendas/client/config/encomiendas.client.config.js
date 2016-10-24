@@ -13,18 +13,18 @@
       title: 'Encomiendas',
       state: 'encomiendas',
       type: 'dropdown',
-      roles: ['*']
+      roles: ['user']
     });
 
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'encomiendas', {
-      title: 'List Encomiendas',
+      title: 'Lista de Encomiendas',
       state: 'encomiendas.list'
     });
 
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'encomiendas', {
-      title: 'Create Encomienda',
+      title: 'Crear Encomienda',
       state: 'encomiendas.create',
       roles: ['user']
     });

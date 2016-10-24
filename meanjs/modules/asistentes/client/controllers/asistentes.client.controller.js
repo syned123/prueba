@@ -20,7 +20,7 @@
 
     // Remove existing Asistente
     function remove() {
-      if ($window.confirm('Are you sure you want to delete?')) {
+      if ($window.confirm('¿Estas seguro que quieres borrarlo?..exiten datos relacionados')) {
         vm.asistente.$remove($state.go('asistentes.list'));
       }
     }

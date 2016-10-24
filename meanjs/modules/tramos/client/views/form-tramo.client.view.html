@@ -27,7 +27,7 @@
           </div>
         </div>
         <div class="form-group" show-errors>
-          <label class="control-label" for="duracion">Duracion</label>
+          <label class="control-label" for="duracion">Duracion en horas</label>
           <input name="duracion" type="text" ng-model="vm.tramo.duracion" id="duracion" class="form-control" placeholder="duracion" required>
           <div ng-messages="vm.form.tramoForm.duracion.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Se requiere final del tramo.</p>
@@ -54,8 +54,22 @@
             <p class="help-block error-text" ng-message="required">Se requiere final del tramo.</p>
           </div>
         </div>
+        
+        
+    
+
+
+
+
+
+
+
+      
+
+
+
         <div class="form-group">
-          <button type="submit" class="btn btn-default">{{vm.tramo._id ? 'Update' : 'Create'}}</button>
+          <button type="submit" class="btn btn-success">{{vm.tramo._id ? 'Actualizar' : 'Crear'}}</button>
         </div>
         <div ng-show="vm.error" class="text-danger">
           <strong ng-bind="vm.error"></strong>

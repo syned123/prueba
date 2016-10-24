@@ -25,6 +25,7 @@ var ClienteSchema = new Schema({
   ci_nit: {
     type: String,
     default: '',
+    unique: 'CI ya existe',
     required: 'Por favor introduzca ci o nit del cliente',
     trim: true
   },

@@ -1,15 +1,30 @@
 <section>
   <div class="page-header">
-    <h1 ng-bind="vm.encomienda.name"></h1>
-  </div>
+    <div class="pull-right"><a class="btn btn-primary" href="http://localhost:3000/encomiendas">Atras</a>    </div>
+    <center><h1>Datos de la encomienda</h1></center>
+    <h2><left>Fecha de salida: {{vm.encomienda.fecha_salida}}</left></h2>
+    <h2><left>Fecha de llegada: {{vm.encomienda.fecha_llegada}}</left></h2>
+    <h2><left>Viaje: {{vm.encomienda.viaje}}</left></h2>
+    <h2><left>tipo de encomienda: {{vm.encomienda.tipo_encomienda}}</left></h2>
+    <h2><left>codigo encomienda: {{vm.encomienda.codigo_encomienda}}</left></h2>
+    <h2><left>cantidad a pagar Bs: {{vm.encomienda.cantidad_pagar}}</left></h2>
+    <h2><left>celula identidad: {{vm.fdatos.ci_nit}}</left></h2>
+    <h2><left>Nombre Remitente: {{vm.fdatos.nombre_cliente}}</left></h2>
+    <h2><left>apellido Remitente: {{vm.fdatos.apellidos_cliente}}</left></h2>
+    <h2><left>celula identidad: {{vm.encomienda.ci_destinatario}}</left></h2>
+    <h2><left>Nombre Destinatario: {{vm.encomienda.nombre_destinatario}}</left></h2>
+    <h2><left>apellido Destinatario: {{vm.encomienda.apellidos_destinatario}}</left></h2>
+    
+  
+    </div>
   <div class="pull-right"
        ng-show="vm.encomienda.isCurrentUserOwner">
     <a class="btn btn-primary"
        ui-sref="encomiendas.edit({ encomiendaId: vm.encomienda._id })">
-      <i class="glyphicon glyphicon-edit"></i>
+      <i class="glyphicon glyphicon-edit">Actualizar</i>
     </a>
     <a class="btn btn-primary" ng-click="vm.remove()">
-      <i class="glyphicon glyphicon-trash"></i>
+      <i class="glyphicon glyphicon-trash">Eliminar</i>
     </a>
   </div>
   <small>

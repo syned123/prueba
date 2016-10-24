@@ -6,11 +6,11 @@
     .module('facturacionpasajes')
     .controller('FacturacionpasajesController', FacturacionpasajesController);
 
-  FacturacionpasajesController.$inject = ['$scope', '$state', '$window', 'Authentication', 'facturacionpasajeResolve'];
+  FacturacionpasajesController.$inject = ['$scope', '$state', '$window', 'Authentication', 'facturacionpasajeResolve', 'ViajesService'];
 
-  function FacturacionpasajesController ($scope, $state, $window, Authentication, facturacionpasaje) {
+  function FacturacionpasajesController ($scope, $state, $window, Authentication, facturacionpasaje, ViajesService) {
     var vm = this;
-
+    vm.viajes = ViajesService.query();
     vm.authentication = Authentication;
     vm.facturacionpasaje = facturacionpasaje;
     vm.error = null;
@@ -39,9 +39,13 @@
       selected: {},
       sold: {}
     };
+    $scope.estilo = {
+      color: '#fff',
+      backgroundColor: 'red'
+    };
     // Remove existing Facturacionpasaje
     function remove() {
-      if ($window.confirm('Are you sure you want to delete?')) {
+      if ($window.confirm('¿Estas seguro que quieres borrarlo?')) {
         vm.facturacionpasaje.$remove($state.go('facturacionpasajes.list'));
       }
     }

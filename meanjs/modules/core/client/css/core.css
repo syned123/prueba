@@ -1,5 +1,6 @@
 .content {
   margin-top: 50px;
+  background-image: linear-gradient(#101e25 0%, #1f1f1f 100%);
 }
 .undecorated-link:hover {
   text-decoration: none;

@@ -99,7 +99,7 @@ exports.asistenteByID = function(req, res, next, id) {
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).send({
-      message: 'Asistente is invalid'
+      message: 'Asistente no es valido'
     });
   }
 
@@ -108,7 +108,7 @@ exports.asistenteByID = function(req, res, next, id) {
       return next(err);
     } else if (!asistente) {
       return res.status(404).send({
-        message: 'No Asistente with that identifier has been found'
+        message: 'No se ha encontrado Asistente con ese identificador'
       });
     }
     req.asistente = asistente;

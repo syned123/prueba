@@ -5,108 +5,111 @@
   <div class="col-md-12">
     <form name="vm.form.encomiendaForm" class="form-horizontal" ng-submit="vm.save(vm.form.encomiendaForm.$valid)" novalidate>
       <fieldset>
-        <div class="row">
-          <div class="col-md-10">
-            <h2><strong>D</strong>etalle emision:</h2>
-              <div class="form-group" show-errors>
-                <label class="control-label" for="fecha_salida">Fecha salida</label>
-                <input name="fecha_salida" type="text" ng-model="vm.cliente.fecha_salida" id="fecha_salida" class="form-control" placeholder="Fecha de salida" required>
-              <div ng-messages="vm.form.encomiendaForm.fecha_salida.$error" role="alert">
-              <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
-              </div>
-              </div>
-          <div class="form-group" show-errors>
-              <label class="control-label" for="fecha_llegada">Fecha llegada</label>
-              <input name="fecha_llegada" type="text" ng-model="vm.cliente.fecha_llegada" id="fecha_llegada" class="form-control" placeholder="Fecha de llegada" required>
-              <div ng-messages="vm.form.encomiendaForm.fecha_llegada.$error" role="alert">
-                <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
-              </div>
-          </div>
-            <div class="form-group" show-errors ng-controller="ViajesListController">
-              <label class="control-label" for="destino">Viajes</label>
-              <select name="destino" 
-              ng-options="viaje.destino as viaje.destino for viaje in vm.viajes"   
-              ng-model="vm.encomienda.viaje" id="destino" class="form-control" required>
-                <option value="">--Elige un destino--</option>
-              </select>
-              
-              <div ng-messages="vm.form.encomiendaForm.destino.$error" role="alert">
-                <p class="help-block error-text" ng-message="required">Se requiere datos del chofer</p>
-              </div>
+        
+      <div class="row">
+          
+        <div class="col-md-7">
+          <h2><strong>D</strong>etalle emision:</h2>
+           <div class="form-group" show-errors>
+            <label class="control-label" for="fecha_salida">Fecha salida</label>
+            <input name="fecha_salida" type="text" ng-model="vm.encomienda.fecha_salida" id="fecha_salida" class="form-control" placeholder="Fecha de salida"    required>
+            <div ng-messages="vm.form.encomiendaForm.fecha_salida.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Se requiere fecha de salida</p>
+            </div>
+           </div>
+           <div class="form-group" show-errors>
+            <label class="control-label" for="fecha_llegada">Fecha llegada</label>
+            <input name="fecha_llegada" type="text" ng-model="vm.encomienda.fecha_llegada" id="fecha_llegada" class="form-control" placeholder="Fecha de llegada" required>
+            <div ng-messages="vm.form.encomiendaForm.fecha_llegada.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Se requiere fecha de llegada</p>
+            </div>
+           </div>
+           <div class="form-group" show-errors ng-controller="ViajesListController">
+            <label class="control-label" for="destino">Viajes</label>
+            <select name="destino" 
+            ng-options="viaje.destino as viaje.destino for viaje in vm.viajes"   
+            ng-model="vm.encomienda.viaje" id="destino" class="form-control" required>
+            <option value="">--Elige un destino--</option>
+            </select>
+            <div ng-messages="vm.form.encomiendaForm.destino.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Se requiere destino</p>
+            </div>
+           </div>
+           el viaje es:{{vm.encomienda.fecha_llegada}}
+        </div>
+
+    <div class="col-md-3">
+      <h2><strong>T</strong>ipo Encomienda:</h2>  
+        <div class="form-group" show-errors>
+            <label class="control-label" for="tipo_encomienda">tipo de encomienda</label>
+            <input name="tipo_encomienda" type="text" ng-model="vm.encomienda.tipo_encomienda" id="tipo_encomienda" class="form-control" placeholder="Codigo de la encomienda" required>
+            <div ng-messages="vm.form.encomiendaForm.tipo_encomienda.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
             </div>
         </div>
-          
-        <div class="col-md-3">
-            <h2><strong>T</strong>ipo Encomienda:</h2>  
-              <div class="container">
-                <form>
-                  <label class="radio-inline">
-                  <input type="radio" name="tipo_encomienda" ng-model="vm.encomienda.tipo_encomienda" id="tipo_encomienda">Carta</label>
-                  <label class="radio-inline">
-                  <input type="radio" name="tipo_encomienda" ng-model="vm.encomienda.tipo_encomienda" id="tipo_encomienda">Valor</label>
-                  <label class="radio-inline">
-                  <input type="radio" name="tipo_encomienda" ng-model="vm.encomienda.tipo_encomienda" id="tipo_encomienda">Carga</label>
-                </form>
-              </div>
-              <div class="form-group" show-errors>
-                <label class="control-label" for="codigo_encomienda">Codigo de encomienda</label>
-                <input name="codigo_encomienda" type="text" ng-model="vm.cliente.codigo_encomienda" id="codigo_encomienda" class="form-control" placeholder="Codigo de la encomienda" required>
-              <div ng-messages="vm.form.encomiendaForm.codigo_encomienda.$error" role="alert">
-              <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
-              </div>
-              </div>
-              <div class="form-group" show-errors>
-                <label class="control-label" for="cantidad_pagar">Cantidad a Pagar</label>
-                <input name="cantidad_pagar"" type="text" ng-model="vm.cliente.cantidad_pagar"" id="cantidad_pagar"" class="form-control" placeholder="Cantidad a pagar" required>
-              <div ng-messages="vm.form.encomiendaForm.cantidad_pagar".$error" role="alert">
-              <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
-              </div>
-              </div>
+              
+        <div class="form-group" show-errors>
+            <label class="control-label" for="codigo_encomienda">Codigo de encomienda</label>
+            <input name="codigo_encomienda" type="text" ng-model="vm.encomienda.codigo_encomienda" id="codigo_encomienda" class="form-control" placeholder="Codigo de la encomienda" required>
+            <div ng-messages="vm.form.encomiendaForm.codigo_encomienda.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
+            </div>
         </div>
-        <div class="col-md-4">
-            <h2><strong>R</strong>emitente:</h2>  
-              <div class="form-group" show-errors>
-                <label class="control-label" for="nombre_remitente">celula identidad</label>
-                <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="celula identidad" required>
-              <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
-              <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
-              </div>
-              </div>
-              <div class="form-group" show-errors>
-                <label class="control-label" for="nombre_cliente">Nombre Remitente</label>
-                <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Nombre del remitente" required>
-              <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
-              <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
-              </div>
-              </div>
-              <div class="form-group" show-errors>
-                <label class="control-label" for="nombre_cliente">Apellidos Remitente</label>
-                <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Apellidos del remitente" required>
-              <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
-              <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
-              </div>
-              </div>
+              
+        <div class="form-group" show-errors>
+            <label class="control-label" for="cantidad_pagar">Cantidad a Pagar</label>
+            <input name="cantidad_pagar"" type="text" ng-model="vm.encomienda.cantidad_pagar" id="cantidad_pagar"" class="form-control" placeholder="Cantidad a pagar" required>
+            <div ng-messages="vm.form.encomiendaForm.cantidad_pagar".$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
+            </div>
         </div>
+
+    </div>
+
+    <div class="col-md-4">
+      <h2><strong>R</strong>emitente:</h2>  
+        <div class="form-group" show-errors>
+          <label class="control-label" for="nombre_cliente">Nombre del cliente</label>
+          <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Nombre cliente" required>
+          <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="apellidos_cliente">Apellidos del cliente</label>
+          <input name="apellidos_cliente" type="text" ng-model="vm.cliente.apellidos_cliente" id="apellidos_cliente" class="form-control" placeholder="Apellidos cliente" required>
+          <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="ci_nit">Ci o nit del cliente</label>
+          <input name="ci_nit" type="text" ng-model="vm.cliente.ci_nit" id="ci_nit" class="form-control" placeholder="Ci o nir del cliente" required>
+          <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Se requiere ci o nit del cliente</p>
+          </div>
+        </div>
+    </div>
         <div class="col-md-4">
             <h2><strong>D</strong>estinatario:</h2>  
               <div class="form-group" show-errors>
                 <label class="control-label" for="ci_destinatario">celula identidad</label>
-                <input name="ci_destinatario" type="text" ng-model="vm.cliente.ci_destinatario" id="ci_destinatario" class="form-control" placeholder="celula identidad" required>
+                <input name="ci_destinatario" type="text" ng-model="vm.encomienda.ci_destinatario" id="ci_destinatario" class="form-control" placeholder="  celula identidad" required>
               <div ng-messages="vm.form.encomiendaForm.ci_destinatario.$error" role="alert">
               <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
               </div>
               </div>
               <div class="form-group" show-errors>
                 <label class="control-label" for="nombre_destinatario">Nombre Destinatario</label>
-                <input name="nombre_destinatario" type="text" ng-model="vm.cliente.nombre_destinatario" id="nombre_destinatario" class="form-control" placeholder="Nombre del destinatario" required>
+                <input name="nombre_destinatario" type="text" ng-model="vm.encomienda.nombre_destinatario" id="nombre_destinatario" class="form-control" placeholder="Nombre del destinatario" required>
               <div ng-messages="vm.form.encomiendaForm.nombre_destinatario.$error" role="alert">
               <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
               </div>
               </div>
               <div class="form-group" show-errors>
                 <label class="control-label" for="apellidos_destinatario">Apellidos Destinatario</label>
-                <input name="apellidos_destinatario" type="text" ng-model="vm.cliente.apellidos_destinatario" id="apellidos_destinatario" class="form-control" placeholder="Apellidos del destinatario" required>
-              <div ng-messages="vm.form.encomiendaorm.apellidos_destinatario  .$error" role="alert">
+                <input name="apellidos_destinatario" type="text" ng-model="vm.encomienda.apellidos_destinatario" id="apellidos_destinatario" class="form-control" placeholder="Apellidos del destinatario" required>
+              <div ng-messages="vm.form.encomiendaForm.apellidos_destinatario.$error" role="alert">
               <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
               </div>
               </div>
@@ -114,7 +117,7 @@
           
   </div>
         <div class="form-group">
-          <button type="submit" class="btn btn-default">{{vm.encomienda._id ? 'Update' : 'Create'}}</button>
+          <button ng-click="enviar()" type="submit" class="btn btn-default">{{vm.encomienda._id ? 'Actualizar' : 'Crear'}}</button>
         </div>
         <div ng-show="vm.error" class="text-danger">
           <strong ng-bind="vm.error"></strong>
@@ -123,3 +126,9 @@
     </form>
   </div>
 </section>
+
+
+
+
+
+

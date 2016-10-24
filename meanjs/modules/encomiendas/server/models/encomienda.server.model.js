@@ -10,10 +10,52 @@ var mongoose = require('mongoose'),
  * Encomienda Schema
  */
 var EncomiendaSchema = new Schema({
-  name: {
+  fecha_salida: {
     type: String,
     default: '',
-    required: 'Please fill Encomienda name',
+    required: 'Por favor introduzca la fecha de salida',
+    trim: true
+  },
+  fecha_llegada: {
+    type: String,
+    default: '',
+    required: 'Por favor introduzca la fecha de llegada',
+    trim: true
+  },
+  viaje: {
+    type: String,
+    default: '',
+    required: 'Por favor introduzca la fecha de llegada',
+    trim: true
+  },
+  tipo_encomienda: {
+    type: String,
+    default: '',
+    required: 'Por favor introduzca el tipo de Encomienda',
+    trim: true
+  },
+  codigo_encomienda: {
+    type: String,
+    default: '',
+    required: 'Por favor introduzca el codigo_encomienda',
+    trim: true
+  },
+  ci_destinatario: {
+    type: String,
+    default: '',
+    required: 'Por favor introduzca el ci_destinatario',
+    trim: true
+  },
+  nombre_destinatario: {
+    type: String,
+    default: '',
+    required: 'Por favor introduzca el nombre_destinatario',
+    trim: true
+  },
+  apellidos_destinatario: {
+    type: String,
+    default: '',
+    required: 'Por favor introduzca el apellidos_destinatario',
     trim: true
   },
   created: {

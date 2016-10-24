@@ -13,18 +13,18 @@
       title: 'Clientes',
       state: 'clientes',
       type: 'dropdown',
-      roles: ['*']
+      roles: ['user']
     });
 
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'clientes', {
-      title: 'List Clientes',
+      title: 'Lista de Clientes',
       state: 'clientes.list'
     });
 
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'clientes', {
-      title: 'Create Cliente',
+      title: 'Crear Cliente',
       state: 'clientes.create',
       roles: ['user']
     });

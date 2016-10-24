@@ -21,13 +21,13 @@
         </div>
         <div class="form-group" show-errors>
           <label class="control-label" for="ci_nit">Ci o nit del cliente</label>
-          <input name="ci_nit" type="text" ng-model="vm.cliente.ci_nit" id="ci_nit" class="form-control" placeholder="Ci o nir del cliente" required>
+          <input name="ci_nit" type="text" ng-model="vm.cliente.ci_nit" id="ci_nit" class="form-control" placeholder="Ci o nit del cliente" required>
           <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Se requiere ci o nit del cliente</p>
           </div>
         </div>
         <div class="form-group">
-          <button type="submit" class="btn btn-default">{{vm.cliente._id ? 'Actualizar' : 'Crear'}}</button>
+          <button type="submit" class="btn btn-success">{{vm.cliente._id ? 'Actualizar' : 'Crear'}}</button>
         </div>
         <div ng-show="vm.error" class="text-danger">
           <strong ng-bind="vm.error"></strong>

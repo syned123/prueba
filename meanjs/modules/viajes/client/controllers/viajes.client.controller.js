@@ -22,7 +22,7 @@
 
     // Remove existing Viaje
     function remove() {
-      if ($window.confirm('Are you sure you want to delete?')) {
+      if ($window.confirm('Estas seguro que quieres borrarlo?')) {
         vm.viaje.$remove($state.go('viajes.list'));
       }
     }

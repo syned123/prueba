@@ -1,199 +1,139 @@
-<section>
+<section> 
   <div class="page-header">
-    <h1>{{vm.facturacionpasaje._id ? 'Editar pasaje' : 'Nuevo pasaje'}}</h1>
+    <center><h1>{{vm.facturacionpasaje._id ? 'Editar pasaje' : 'Nuevo pasaje'}}</h1></center>
+    <A class="btn btn-success" HREF="https://www.google.com/maps/@-16.4985117,-68.1491034,15z?hl=en">Ver estado</A>
   </div>
   
   <div class="col-md-12">
     <form name="vm.form.facturacionpasajeForm" class="form-horizontal" ng-submit="vm.save(vm.form.facturacionpasajeForm.$valid)" novalidate>
       <fieldset>
-        <div class="col-md-3">
-      <h2><strong>V</strong>iaje</h2>
+        <div class="col-md-5">
+          <h2><strong>D</strong>etalle emision:</h2>
+           <div class="form-group" show-errors>
+            <label class="control-label" for="fecha_salida">Fecha salida</label>
+            <input name="fecha_salida" type="text" ng-model="vm.encomienda.fecha_salida" id="fecha_salida" class="form-control" placeholder="Fecha de salida"    required>
+            <div ng-messages="vm.form.encomiendaForm.fecha_salida.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Se requiere fecha de salida</p>
+            </div>
+           </div>
+           <div class="form-group" show-errors>
+            <label class="control-label" for="fecha_llegada">Fecha llegada</label>
+            <input name="fecha_llegada" type="text" ng-model="vm.encomienda.fecha_llegada" id="fecha_llegada" class="form-control" placeholder="Fecha de llegada" required>
+            <div ng-messages="vm.form.encomiendaForm.fecha_llegada.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Se requiere fecha de llegada</p>
+            </div>
+           </div>
+           <div class="form-group" show-errors ng-controller="ViajesListController">
+            <label class="control-label" for="destino">Viajes</label>
+            <select name="destino" 
+            ng-options="viaje.destino as viaje.destino for viaje in vm.viajes"   
+            ng-model="vm.encomienda.viaje" id="destino" class="form-control" required>
+            <option value="">--Elige un destino--</option>
+            </select>
+            <div ng-messages="vm.form.encomiendaForm.destino.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Se requiere destino</p>
+            </div>
+           </div>
+        </div>    
+        <div class="col-md-5">
+          <h2><strong>D</strong>etalle emision:</h2>
+           <div class="form-group" show-errors>
+            <label class="control-label" for="fecha_salida">Fecha salida</label>
+            <input name="fecha_salida" type="text" ng-model="vm.encomienda.fecha_salida" id="fecha_salida" class="form-control" placeholder="Fecha de salida"    required>
+            <div ng-messages="vm.form.encomiendaForm.fecha_salida.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Se requiere fecha de salida</p>
+            </div>
+           </div>
+           <div class="form-group" show-errors>
+            <label class="control-label" for="fecha_llegada">Fecha llegada</label>
+            <input name="fecha_llegada" type="text" ng-model="vm.encomienda.fecha_llegada" id="fecha_llegada" class="form-control" placeholder="Fecha de llegada" required>
+            <div ng-messages="vm.form.encomiendaForm.fecha_llegada.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Se requiere fecha de llegada</p>
+            </div>
+           </div>
+           <div class="form-group" show-errors ng-controller="ViajesListController">
+            <label class="control-label" for="destino">Viajes</label>
+            <select name="destino" 
+            ng-options="viaje.destino as viaje.destino for viaje in vm.viajes"   
+            ng-model="vm.encomienda.viaje" id="destino" class="form-control" required>
+            <option value="">--Elige un destino--</option>
+            </select>
+            <div ng-messages="vm.form.encomiendaForm.destino.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Se requiere destino</p>
+            </div>
+           </div>
+        </div>    
+</div>
 
-        <div class="form-group" show-errors>
-          <label class="control-label" for="fecha_salida">fecha_salida</label>
-          <input name="fecha_salida" type="text" ng-model="vm.facturacionpasajes.fecha_salida" id="fecha_salida" class="form-control" placeholder="fecha de salida" required>
-          <div ng-messages="vm.form.facturacionpasajesForm.fecha_salida.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
-          </div>
-        </div>
-        <div class="form-group" show-errors>
-          <label class="control-label" for="fecha_llegada">fecha_llegada</label>
-          <input name="fecha_llegada" type="text" ng-model="vm.facturacionpasajes.fecha_llegada" id="fecha_llegada" class="form-control" placeholder="fecha de llegada" required>
-          <div ng-messages="vm.form.facturacionpasajesForm.fecha_llegada.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
-          </div>
-        </div>
-        <div class="form-group" show-errors>
-          <label class="control-label" for="fecha_llegada">Hora del viaje</label>
-          <input name="fecha_llegada" type="text" ng-model="vm.facturacionpasajes.fecha_llegada" id="fecha_llegada" class="form-control" placeholder="Hora del viaje" required>
-          <div ng-messages="vm.form.facturacionpasajesForm.fecha_llegada.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
-          </div>
-        </div>
+        <div class="col-md-15">
+          <h2><strong>B</strong>us</h2>
+          <span class="label label-success">Libre</span>
+          <span class="label label-warning">Reservado</span>
+          <span class="label label-danger">Vendido</span>
+        <section id="tabla">
+        <br>
+  <table border="5">
+    <tr>
+      <td ng-click="vm.view.selectField(35);"><center>35</center></td>
+      <td id="celda31" ng-click="vm.view.selectField(31);"><center>31</center></td>
+      <td ng-click="vm.view.selectField(27);"><center>27</center></td>
+      <td ng-click="vm.view.selectField(23);"><center>23</center></td>
+      <td ng-click="vm.view.selectField(19);"><center>19</center></td>
+      <td ng-click="vm.view.selectField(15);"><center>15</center></td>
+      <td ng-click="vm.view.selectField(11);"><center>11</center></td>
+      <td ng-click="vm.view.selectField(7);"><center>7</center></td>
+      <td ng-click="vm.view.selectField(3);"><center>3</center></td>
+      <td ng-click="vm.view.selectField(1);"><center>1</center></td>
+    </tr>
+    <tr>
+      <td ng-click="vm.view.selectField(36);"><center>36</center></td>
+      <td ng-click="vm.view.selectField(32);"><center>32</center></td>
+      <td ng-click="vm.view.selectField(29);"><center>29</center></td>
+      <td ng-click="vm.view.selectField(24);"><center>24</center></td>
+      <td ng-click="vm.view.selectField(20);"><center>20</center></td>
+      <td ng-click="vm.view.selectField(16);"><center>16</center></td>
+      <td ng-click="vm.view.selectField(12);"><center>12</center></td>
+      <td ng-click="vm.view.selectField(8);"><center>8</center></td>
+      <td ng-click="vm.view.selectField(4);"><center>4</center></td>
+      <td ng-click="vm.view.selectField(2);"><center>2</center></td>
+    </tr>
+    <tr>
+      <td ng-click="vm.view.selectField(37);"><center>37</center></td>
+    </tr>
+    <tr>
+      <td ng-click="vm.view.selectField(38);"><center>38</center></td>
+      <td ng-click="vm.view.selectField(34);"><center>34</center></td>
+      <td ng-click="vm.view.selectField(30);"><center>30</center></td>
+      <td ng-click="vm.view.selectField(26);"><center>26</center></td>
+      <td ng-click="vm.view.selectField(22);"><center>22</center></td>
+      <td ng-click="vm.view.selectField(18);"><center>18</center></td>
+      <td ng-click="vm.view.selectField(14);"><center>14</center></td>
+      <td ng-click="vm.view.selectField(10);"><center>10</center></td>
+      <td ng-click="vm.view.selectField(6);"><center>6</center></td>
+    </tr>
+    <tr>
+      <td ng-click="vm.view.selectField(39);"><center>39</center></td>
+      <td ng-click="vm.view.selectField(33);"><center>33</center></td>
+      <td ng-click="vm.view.selectField(29);"><center>29</center></td>
+      <td ng-click="vm.view.selectField(25);"><center>25</center></td>
+      <td ng-click="vm.view.selectField(21);"><center>21</center></td>
+      <td ng-click="vm.view.selectField(17);"><center>17</center></td>
+      <td ng-click="vm.view.selectField(13);"><center>13</center></td>
+      <td id="celda9" ng-click="vm.view.selectField(9);"><center>9</center></td>
+      <td><center>5</center></td>
+    </tr> 
+  </table>
+</section>
+<br>
+          <form>
+            Nro de Asiento: <input type="" name="">    
+            <button type="button" class="btn btn-success">libre</button>
+            <button type="button" class="btn btn-warning">reservar</button>
+            <button type="button" class="btn btn-danger">vender</button>
 
-    </div>
-    <div class="col-md-3">
-      <h2><strong>C</strong>lientes</h2>
-      <div class="form-group" show-errors>
-          <label class="control-label" for="nombre_cliente">Nombre cliente</label>
-          <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Nombre cliente" required>
-          <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
-          </div>
-        </div>
-        <div class="form-group" show-errors>
-          <label class="control-label" for="nombre_cliente">Apeliido cliente</label>
-          <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Apellidos cliente" required>
-          <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
-          </div>
-        </div>
-        <div class="form-group" show-errors>
-          <label class="control-label" for="nombre_cliente">CI o nit cliente</label>
-          <input name="nombre_cliente" type="text" ng-model="vm.cliente.nombre_cliente" id="nombre_cliente" class="form-control" placeholder="Ci o nit cliente" required>
-          <div ng-messages="vm.form.clienteForm.name.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Se requiere nombre del cliente</p>
-          </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <h2><strong>B</strong>us</h2>
-        <span class="label label-success">Libre</span>
-                <span class="label label-warning">Reservado</span>
-        <span class="label label-danger">Vendido</span>
-
-        <img alt="MEAN.JS" class="img-responsive text-center" src="modules/facturacionpasajes/client/img/bus_normal1.jpg" />
-        <table style="width: 72.6%;position: relative;top: -250px;left: 29px;height: 84%;">
-        
-        <tr>
-            <td style="height: 80px;">
-                <div style="width: 46.5%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 31});"></div>
-            </td>
-            <td style="height: 85px;">
-                <div style="width: 46.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 27});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 42.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 23});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 44.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 19});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 42.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 15});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 46.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 11});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 49.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 7});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 49.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 3});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 52.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 1});"></div>
-            </td>
-        </tr>
-        </table>
-         <table style="width: 72.6%;position: relative;top: -294px;left: 28px;height: 84%;">
-        
-        <tr>
-            <td style="height: 80px;">
-                <div style="width: 46.5%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 32});"></div>
-            </td>
-            <td style="height: 85px;">
-                <div style="width: 46.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 28});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 42.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 24});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 44.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 20});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 42.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 16});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 46.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 12});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 49.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 8});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 49.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 4});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 52.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 2});"></div>
-            </td>
-        </tr>
-        </table>
-         <table style="width: 9.6%;position: relative;top: -344px;left: 27px;height: 84%;">
-            <tr>
-            <td style="height: 80px;">
-                <div style="width: 46.5%;height: 34%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 33});"></div>
-            </td>
-            </tr>
-          </table>
-          <table style="width: 64.6%;position: relative;top: -391px;left: 28px;height: 84%;">
-        
-        <tr>
-            <td style="height: 80px;">
-                <div style="width: 46.5%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 34});"></div>
-            </td>
-            <td style="height: 85px;">
-                <div style="width: 46.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 29});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 42.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 25});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 44.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 21});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 42.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 17});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 46.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 13});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 49.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 9});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 49.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 5});"></div>
-            </td>
-        </tr>
-        </table>
-        <table style="width: 64.6%;position: relative;top: -435px;left: 28px;height: 84%;">
-        
-        <tr>
-            <td style="height: 80px;">
-                <div style="width: 46.5%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 35});"></div>
-            </td>
-            <td style="height: 85px;">
-                <div style="width: 46.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 30});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 42.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 26});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 44.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 22});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 42.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 18});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 46.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 14});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 49.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 10});"></div>
-            </td>
-            <td style="height: 80px;">
-                <div style="width: 49.50%;height: 45%; background: rgba(27, 142, 29, 0.59);" ng-click="vm.view.selectField({field: 6});"></div>
-            </td>
-        </tr>
-        </table>
-    </div>
-    
+          </form>
+</div>
+<br>
 
         <div class="form-group">
           <button type="submit" class="btn btn-default">{{vm.facturacionpasaje._id ? 'Actualizar' : 'Crear'}}</button>

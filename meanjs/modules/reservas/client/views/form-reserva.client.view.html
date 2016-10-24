@@ -1,0 +1,190 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.reserva._id ? 'Editar Reserva' : 'Nueva Reserva'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.reservaForm" class="form-horizontal" ng-submit="vm.save(vm.form.reservaForm.$valid)" novalidate>
+      <fieldset>
+        <div class="col-md-5">
+          <h2><strong>C</strong>liente:</h2>
+           <div class="form-group" show-errors>
+            <label class="control-label" for="fecha_salida">Celula de identidad o CI</label>
+            <input name="fecha_salida" type="text" ng-model="vm.encomienda.fecha_salida" id="fecha_salida" class="form-control" placeholder="Fecha de salida"    required>
+            <div ng-messages="vm.form.encomiendaForm.fecha_salida.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Se requiere fecha de salida</p>
+            </div>
+           </div>
+           <div class="form-group" show-errors>
+            <label class="control-label" for="fecha_llegada">Nombres del cliente</label>
+            <input name="fecha_llegada" type="text" ng-model="vm.encomienda.fecha_llegada" id="fecha_llegada" class="form-control" placeholder="Fecha de llegada" required>
+            <div ng-messages="vm.form.encomiendaForm.fecha_llegada.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Se requiere fecha de llegada</p>
+            </div>
+           </div>
+           <div class="form-group" show-errors>
+            <label class="control-label" for="fecha_llegada">Apellidos del cliente</label>
+            <input name="fecha_llegada" type="text" ng-model="vm.encomienda.fecha_llegada" id="fecha_llegada" class="form-control" placeholder="Fecha de llegada" required>
+            <div ng-messages="vm.form.encomiendaForm.fecha_llegada.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Se requiere fecha de llegada</p>
+            </div>
+           </div>
+        </div>    
+        <div class="col-md-5">
+          <h2><strong>V</strong>iaje</h2>
+           <div class="form-group" show-errors ng-controller="ViajesListController">
+            <label class="control-label" for="destino">Viajes</label>
+            <select name="destino" 
+            ng-options="viaje.destino as viaje.destino for viaje in vm.viajes"   
+            ng-model="vm.encomienda.viaje" id="destino" class="form-control" required>
+            <option value="">--Elige un destino--</option>
+            </select>
+            <div ng-messages="vm.form.encomiendaForm.destino.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Se requiere destino</p>
+            </div>
+           </div>
+           <div class="form-group" show-errors>
+            <label class="control-label" for="fecha_llegada">fecha de salida</label>
+            <input name="fecha_llegada" type="text" ng-model="vm.encomienda.fecha_llegada" id="fecha_llegada" class="form-control" placeholder="Fecha de llegada" required>
+            <div ng-messages="vm.form.encomiendaForm.fecha_llegada.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Se requiere fecha de llegada</p>
+            </div>
+           </div>
+           <div class="form-group" show-errors ng-controller="AsientosListController">
+            <label class="control-label" for="destino">Asientos</label>
+            <select name="destino" 
+            ng-options="asiento.name as asiento.name for asiento in vm.asientos"   
+            ng-model="vm.encomienda.viaje" id="destino" class="form-control" required>
+            <option value="">--Elige un asiento--</option>
+            </select>
+            <div ng-messages="vm.form.encomiendaForm.destino.$error" role="alert">
+              <p class="help-block error-text" ng-message="required">Se requiere destino</p>
+            </div>
+           </div>
+        </div>    
+</div>
+
+        <div class="col-md-15">
+          <h2><strong>B</strong>us</h2>
+          <span class="label label-success">Libre</span>
+          <span class="label label-warning">Reservado</span>
+          <span class="label label-danger">Vendido</span>
+        <section id="tabla">
+        <br>
+  <table border="5">
+    <tr>
+      <td ng-click="vm.view.selectField(35);"><center>35</center></td>
+      <td id="celda31"><center>31</center></td>
+      <td><center>27</center></td>
+      <td><center>23</center></td>
+      <td><center>19</center></td>
+      <td><center>15</center></td>
+      <td><center>11</center></td>
+      <td><center>7</center></td>
+      <td><center>3</center></td>
+      <td id="celda1v"><center>1</center></td>
+    </tr>
+    <tr>
+      <td><center>36</center></td>
+      <td><center>32</center></td>
+      <td><center>29</center></td>
+      <td><center>24</center></td>
+      <td><center>20</center></td>
+      <td><center>16</center></td>
+      <td><center>12</center></td>
+      <td><center>8</center></td>
+      <td><center>4</center></td>
+      <td><center>2</center></td>
+    </tr>
+    <tr>
+      <td><center>37</center></td>
+    </tr>
+    <tr>
+      <td><center>38</center></td>
+      <td><center>34</center></td>
+      <td><center>30</center></td>
+      <td><center>26</center></td>
+      <td><center>22</center></td>
+      <td><center>18</center></td>
+      <td><center>14</center></td>
+      <td><center>10</center></td>
+      <td><center>6</center></td>
+    </tr>
+    <tr>
+      <td><center>39</center></td>
+      <td><center>33</center></td>
+      <td><center>29</center></td>
+      <td><center>25</center></td>
+      <td><center>21</center></td>
+      <td><center>17</center></td>
+      <td ng-click="vm.view.selectField(13);"><center>13</center></td>
+      <td id="celda9" ng-click="vm.view.selectField(9);"><center>9</center></td>
+      <td><center>5</center></td>
+    </tr> 
+  </table>
+</section>
+<br>
+<form name="fcolor">
+<select name="celda">
+  <option name="celda">1v</option>
+  <option name="celda">2p</option>
+  <option name="celda">3v</option>
+  <option name="celda">4p</option>
+  <option name="celda">5</option>
+  
+</select>
+<button type="button" name="micolor" size="8" value="red" onclick="cambia_color()" class="btn btn-warning">
+reservar</button>
+<br>
+
+</form>
+          
+</div>
+<br>
+<div>    
+      <table class="table table-bordered">
+        <thead>
+         <tr>
+          <th>CI</th>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Cantidad de asientos</th>
+          <th>Viaje</th>
+          <th>Fecha de salida</th>
+          <th>Asiento</th>
+        </tr>
+        </thead>
+          <tbody>
+           <tr ng-repeat = "bus in vm.buses">
+            <td>{{bus.placa}}</td>
+            <td>{{bus.color}}</td>
+            <td>{{bus.modelo}}</td>
+            <td>{{bus.asientos}}</td>
+            <td>{{bus.tipo_bus}}</td>
+            <td>{{bus.pisos}}</td>
+            
+            <td>
+             <div class="table-actions">
+               <a clas="btn btn-default" title="Ver" href="/#!/buses/{{bus._id}}">
+                <span class="glyphicon glyphicon-eye-open"></span>
+               </a>
+               <a clas="btn btn-default" title="Editar" href="/#!/buses/{{bus._id}}/edit">
+                <span class="glyphicon glyphicon-edit"></span>
+               </a>
+               
+             </div>
+            </td>
+            </tr>         
+          </tbody>
+      </table>
+    </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.reserva._id ? 'Update' : 'Create'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

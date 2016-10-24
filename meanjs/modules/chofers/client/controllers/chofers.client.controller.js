@@ -21,7 +21,6 @@
         vm.chofer.$remove($state.go('chofers.list'));
       }
     }
-
     // Save Chofer
     function save(isValid) {
       if (!isValid) {

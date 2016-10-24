@@ -14,6 +14,7 @@ var TramoSchema = new Schema({
     type: String,
     default: '',
     required: 'Por favor, rellene el nombre Tramo',
+    unique: 'Nombre de tramo ya existe',
     trim: true
   },
   inicio_tramo: {
@@ -25,31 +26,31 @@ var TramoSchema = new Schema({
   final_tramo: {
     type: String,
     default: '',
-    required: 'Por favor, rellene el inicio del Tramo',
+    required: 'Por favor, rellene el final del Tramo',
     trim: true
   },
   duracion: {
     type: String,
     default: '',
-    required: 'Por favor, rellene el inicio del Tramo',
+    required: 'Por favor, rellene el duracion del Tramo',
     trim: true
   },
   kilometros: {
     type: String,
     default: '',
-    required: 'Por favor, rellene el inicio del Tramo',
+    required: 'Por favor, rellene el kilometro del Tramo',
     trim: true
   },
   precio_dia: {
     type: String,
     default: '',
-    required: 'Por favor, rellene el inicio del Tramo',
+    required: 'Por favor, rellene el precio_dia del Tramo',
     trim: true
   },
   precio_noche: {
     type: String,
     default: '',
-    required: 'Por favor, rellene el inicio del Tramo',
+    required: 'Por favor, rellene el precio_noche del Tramo',
     trim: true
   },
   created: {

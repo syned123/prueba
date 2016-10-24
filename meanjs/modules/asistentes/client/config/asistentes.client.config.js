@@ -13,7 +13,7 @@
       title: 'Asistentes',
       state: 'asistentes',
       type: 'dropdown',
-      roles: ['*']
+      roles: ['user']
     });
 
     // Add the dropdown list item

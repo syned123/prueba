@@ -1,21 +1,58 @@
 <section>
   <div class="page-header">
-    <h1>Encomiendas</h1>
+    <center><h1>Encomiendas</h1></center>
+    <A class="btn btn-success" HREF="http://localhost:3000/encomiendas/create">Crear</A>
   </div>
-  <div class="list-group">
-    <a ng-repeat="encomienda in vm.encomiendas"
-       ui-sref="encomiendas.view({ encomiendaId: encomienda._id })"
-       class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span ng-bind="encomienda.created | date:'mediumDate'"></span>
-        by
-        <span ng-if="encomienda.user" ng-bind="encomienda.user.displayName"></span>
-        <span ng-if="!encomienda.user">Deleted User</span>
-      </small>
-      <h4 class="list-group-item-heading" ng-bind="encomienda.name"></h4>
-    </a>
-  </div>
+  
+  <div>    
+      <table class="table table-bordered">
+        <thead>
+         <tr>
+          <th>Fecha de salida</th>
+          <th>fecha de llegada</th>
+          <th>Viaje</th>
+          <th>tipo de encomienda</th>
+          <th>codigo encomienda</th>
+          <th>Cantidad a pagar Bs</th>
+          <th>celula identidad</th>
+          <th>Nombre remitente</th>
+          <th>apellido remitente</th>
+          <th>celula identidad</th>
+          <th>Nombre Destinatario</th>
+          <th>apellido Destinatario</th>
+          
+          </tr>
+        </thead>
+          <tbody>
+           <tr ng-repeat = "encomienda in vm.encomiendas">
+            <td>{{encomienda.fecha_salida}}</td>
+            <td>{{encomienda.fecha_llegada}}</td>
+            <td>{{encomienda.viaje}}</td>
+            <td>{{encomienda.tipo_encomienda}}</td>
+            <td>{{encomienda.codigo_encomienda}}</td>
+            <td>{{encomienda.cantidad_pagar}}</td>
+            <td>{{fdatos.ci_nit}}</td>
+            <td>{{fdatos.nombre_cliente}}</td>
+            <td>{{fdatos.apellidos_cliente}}</td>
+            <td>{{encomienda.ci_destinatario}}</td>
+            <td>{{encomienda.nombre_destinatario}}</td>
+            <td>{{encomienda.apellidos_destinatario}}</td>
+            <td>
+             <div class="table-actions">
+               <a clas="btn btn-default" title="Ver" href="/#!/encomiendas/{{encomienda._id}}">
+                <span class="glyphicon glyphicon-eye-open"></span>
+               </a>
+               <a clas="btn btn-default" title="Editar" href="/#!/encomiendas/{{encomienda._id}}/edit">
+                <span class="glyphicon glyphicon-edit"></span>
+               </a>
+               
+             </div>
+            </td>
+            </tr>         
+          </tbody>
+      </table>
+    </div>
+
   <div class="alert alert-warning text-center" ng-if="vm.encomiendas.$resolved && !vm.encomiendas.length">
     No Encomiendas yet, why don't you <a ui-sref="encomiendas.create">create one</a>?
   </div>

@@ -1,6 +1,6 @@
 <section>
   <div class="page-header">
-    <h1>Facturacionpasajes</h1>
+    <h1>Venta de pasajes</h1>
   </div>
   <div class="list-group">
     <a ng-repeat="facturacionpasaje in vm.facturacionpasajes"
@@ -17,6 +17,6 @@
     </a>
   </div>
   <div class="alert alert-warning text-center" ng-if="vm.facturacionpasajes.$resolved && !vm.facturacionpasajes.length">
-    No Facturacionpasajes yet, why don't you <a ui-sref="facturacionpasajes.create">create one</a>?
+    No existe Facturación de Pasajes, ¿por qué no <a ui-sref="facturacionpasajes.create">crea uno</a>?
   </div>
 </section>

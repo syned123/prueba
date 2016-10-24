@@ -1,4 +1,4 @@
-<section>
+<sectiosn>
   <div class="page-header">
     <center><h1>Tramos</h1></center>
     <A class="btn btn-success" HREF="http://localhost:3000/tramos/create">Crear</A>
@@ -10,10 +10,11 @@
           <th>Nombre del tramo</th>
           <th>Inicio del tramo</th>
           <th>Final del tramo</th>
-          <th>Duracion</th>
+          <th>Duracion de horas</th>
           <th>Kilometros</th>
           <th>Precio dia</th>
           <th>Precio noche</th>
+          <th>Estado</th>
          </tr>
         </thead>
           <tbody>
@@ -25,6 +26,7 @@
             <td>{{tramo.kilometros}}</td>
             <td>{{tramo.precio_dia}}</td>
             <td>{{tramo.precio_noche}}</td>
+            <td>{{tramo.estado}}</td>
             <td>
              <div class="table-actions">
                <a clas="btn btn-default" title="Ver" href="/#!/tramos/{{tramo._id}}">

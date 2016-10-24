@@ -13,13 +13,14 @@ var AsistenteSchema = new Schema({
   ci: {
     type: String,
     default: '',
+    unique: 'CI ya existe',
     required: 'Por favor introduzca celula_identidad',
     trim: true
   },
   nombre_asistente: {
     type: String,
     default: '',
-    required: 'Por favor introduzca nombre',
+    required: 'Por favor introduzca nombre_asistente',
     trim: true
   },
   apellido_asistente: {

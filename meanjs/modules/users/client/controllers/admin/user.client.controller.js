@@ -16,7 +16,7 @@
     vm.update = update;
 
     function remove(user) {
-      if ($window.confirm('Are you sure you want to delete this user?')) {
+      if ($window.confirm('¿Está seguro de que quiere eliminar este usuario?')) {
         if (user) {
           user.$remove();
 
